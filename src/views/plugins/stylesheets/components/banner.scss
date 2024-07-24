@@ -1,0 +1,50 @@
+.plugins-banner {
+  --content-columns-space: 0;
+  --padding-block: 32px;
+
+  display: grid;
+
+  &__section {
+    position: relative;
+    isolation: isolate;
+
+    display: grid;
+    gap: 32px;
+
+    padding-block: var(--padding-block);
+  }
+
+  &__content {
+    --columns-space: var(--content-columns-space);
+    --space: calc(var(--columns-space) + 1);
+
+    display: grid;
+    grid-column: var(--space) / calc(var(--space) * -1);
+    gap: 16px;
+
+    text-align: center;
+  }
+
+  &__headline {
+    color: var(--typography-white);
+  }
+
+  &__description {
+    color: var(--scale-white-80);
+
+    font: var(--body-b1);
+  }
+
+  @media only screen and (min-width: 768px) {
+    --padding-block: 48px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    --content-columns-space: 2;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    --content-columns-space: 3;
+    --padding-block: 96px;
+  }
+}

@@ -1,0 +1,34 @@
+.pricing-header-section {
+  --title-color: var(--general-lime);
+  --header-offset: 0;
+
+  padding-block: 32px;
+
+  &__content {
+    --column-index: calc(var(--header-offset) + 1);
+
+    grid-column: var(--column-index) / calc(var(--column-index) * -1);
+  }
+
+  @media only screen and (min-width: 768px) {
+    padding-block: 48px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    --header-offset: 1;
+
+    padding-block: 96px;
+
+    &[data-theme='dark'] + [data-theme='dark'] {
+      margin-top: -40px;
+    }
+  }
+
+  @media only screen and (min-width: 1280px) {
+    --header-offset: 2;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    --header-offset: 3;
+  }
+}

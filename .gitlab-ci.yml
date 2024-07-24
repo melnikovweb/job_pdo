@@ -1,0 +1,76 @@
+# This file is a template, and might need editing before it works on your project.
+# You can copy and paste this template into a new `.gitlab-ci.yml` file.
+# You should not add this template to an existing `.gitlab-ci.yml` file by using the `include:` keyword.
+#
+# To contribute improvements to CI/CD templates, please follow the Development guide at:
+# https://docs.gitlab.com/ee/development/cicd/templates.html
+# This specific template is located at:
+# https://gitlab.com/gitlab-org/gitlab/-/blob/master/lib/gitlab/ci/templates/Nodejs.gitlab-ci.yml
+
+# Official framework image. Look for the different tagged releases at:
+# https://hub.docker.com/r/library/node/tags/
+image: node:latest
+
+# Pick zero or more services to be used on all builds.
+# Only needed when using a docker container to run your tests in.
+# Check out: https://docs.gitlab.com/ee/ci/services/index.html
+services:
+  - mysql:latest
+  - redis:latest
+  - postgres:latest
+
+# This folder is cached between builds
+# https://docs.gitlab.com/ee/ci/yaml/index.html#cache
+cache:
+  paths:
+    - node_modules/
+
+variables:
+  RESOURCE_GROUP: "high_priority_pipeline"
+  TITLE: "BACKMERGE: Release"
+  DESCRIPTION: "Automated backmerge release from the main branch"
+  RELEASE_BRANCH: "main"
+  DEV_BRANCH: "develop"
+
+stages:
+  - install
+  - linters
+  - build
+  - backmerge
+
+package_install:
+  stage: install
+  except:
+    - main
+    - develop
+  script:
+    - npm install
+
+linters:
+  stage: linters
+  except:
+    - main
+    - develop
+  script:
+    - npm run lint:script && npm run lint:style
+
+build_app:
+  stage: build
+  except:
+    - main
+    - develop
+  script:
+    - npm run build:prod
+
+backmerge:
+  before_script: []
+  stage: backmerge
+  resource_group: $RESOURCE_GROUP
+  only:
+    - main
+  script:
+    - RELEASE_TAG=$(git tag -l --sort=v:refname "v*" | tail -n 1 2>/dev/null || echo "v1.0.0")
+    - >
+      curl --header "PRIVATE-TOKEN: $GITLAB_PRIVATE_TOKEN" \
+           --data "source_branch=$RELEASE_BRANCH&target_branch=$DEV_BRANCH&title=${TITLE} ${RELEASE_TAG}&description=$DESCRIPTION&assignee_id=$GITLAB_USER_ID&labels=release,backmerge" \
+           "$GITLAB_API_URL/projects/$CI_PROJECT_ID/merge_requests"

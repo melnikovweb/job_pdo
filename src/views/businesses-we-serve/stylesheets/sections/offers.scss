@@ -1,0 +1,24 @@
+.offers {
+  padding-block: 56px;
+}
+
+.offers-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__title {
+    color: var(--typography-white);
+
+    font: var(--headline-h1);
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  &__description {
+    color: var(--typography-white);
+
+    font: var(--body-b1);
+    text-align: center;
+  }
+}

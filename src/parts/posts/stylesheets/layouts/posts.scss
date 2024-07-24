@@ -1,0 +1,26 @@
+.posts {
+  --post-span: 2;
+  --posts-column-gap: 20px;
+  --posts-row-gap: 24px;
+
+  display: grid;
+  gap: var(--posts-row-gap) var(--posts-column-gap);
+  grid-template-columns: repeat(2, 1fr);
+
+  @media only screen and (min-width: 360px) {
+    --posts-row-gap: 40px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    --post-span: 1;
+    --posts-row-gap: 56px;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    --posts-row-gap: 96px;
+  }
+
+  @media only screen and (min-width: 1920px) {
+    --posts-column-gap: 30px;
+  }
+}

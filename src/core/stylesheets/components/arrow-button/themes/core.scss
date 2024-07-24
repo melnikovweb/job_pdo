@@ -1,0 +1,38 @@
+@use 'src/shared/stylesheets/mixins/state';
+
+@mixin core {
+  @include state.css(arrow-button-size, 32px);
+  @include state.css(arrow-button-icon-size, 24px);
+  @include state.css(arrow-button-radius, 6px);
+  @include state.css(arrow-button-color, var(--typography-white));
+  @include state.css(arrow-button-background, var(--general-blue));
+
+  all: unset;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  aspect-ratio: 1;
+  width: var(--_arrow-button-size);
+
+  border-radius: var(--_arrow-button-radius);
+
+  color: var(--_arrow-button-color);
+  background-color: var(--_arrow-button-background);
+
+  font-size: var(--_arrow-button-icon-size);
+
+  cursor: pointer;
+
+  transition: all 300ms;
+
+  @media only screen and (min-width: 768px) {
+    @include state.css(arrow-button-size, 40px);
+    @include state.css(arrow-button-radius, 8px);
+  }
+
+  @media only screen and (min-width: 1024px) {
+    @include state.css(arrow-button-size, 56px);
+  }
+}

@@ -1,0 +1,71 @@
+.container {
+  $self: &;
+
+  --container-columns: 4;
+  --container-gutter: 20px;
+  --container-margin: 16px;
+  --container-offset-start: 0;
+  --container-offset-end: 0;
+
+  position: relative;
+
+  width: 100%;
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+
+  &:not([data-indent='none']) {
+    padding-inline: var(--container-margin);
+  }
+
+  &[data-columns] {
+    display: grid;
+    column-gap: var(--container-gutter);
+    grid-template-columns: repeat(var(--container-columns), 1fr);
+
+    > * {
+      $column-start: calc(var(--container-offset-start) + 1);
+      $column-end: calc(var(--container-columns) - (var(--container-offset-end) - 1));
+
+      grid-column: #{$column-start} / #{$column-end};
+    }
+
+    > *:is([data-offset], [data-offset-start], [data-offset-end]) {
+      --container-offset-start: 0;
+      --container-offset-end: 0;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    --container-columns: 8;
+    --container-margin: 60px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    --container-columns: 12;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    @for $index from 1 through 12 {
+      @at-root {
+        [data-offset='#{$index}']:where(#{&}[data-columns] > *) {
+          --container-offset-start: #{$index};
+          --container-offset-end: #{$index};
+        }
+
+        [data-offset-end='#{$index}']:where(#{&}[data-columns] > *) {
+          --container-offset-end: #{$index};
+        }
+
+        [data-offset-start='#{$index}']:where(#{&}[data-columns] > *) {
+          --container-offset-start: #{$index};
+        }
+      }
+    }
+  }
+
+  @media only screen and (min-width: 1920px) {
+    --container-gutter: 30px;
+    --container-margin: 120px;
+  }
+}

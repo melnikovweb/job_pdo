@@ -1,0 +1,137 @@
+// stylelint-disable selector-class-pattern
+
+@use 'src/shared/stylesheets/mixins/scroll';
+
+@mixin data-table {
+  .table-wrapper {
+    @include scroll.set-theme('data-theme', 'sm', 'horizontal');
+
+    width: 100%;
+
+    overflow-x: auto;
+  }
+
+  .dataTables_length,
+  .dataTables_filter,
+  .dataTables_info {
+    display: none;
+  }
+
+  .dataTables_paginate {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    margin-top: 56px;
+  }
+
+  .dataTables_paginate > span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .dataTables_paginate > span .ellipsis {
+    align-self: self-end;
+
+    padding-block-end: 0.4rem;
+  }
+
+  .paginate_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: var(--pagination-button-size);
+    height: var(--pagination-button-size);
+    padding: 4px;
+
+    border-radius: 6px;
+
+    color: var(--typography-white);
+
+    font: var(--body-b2);
+
+    cursor: pointer;
+  }
+
+  .paginate_button:hover:not(.current) {
+    color: var(--general-lime);
+  }
+
+  .paginate_button.next,
+  .paginate_button.previous {
+    padding: 16px;
+
+    font-size: 24px;
+  }
+
+  .paginate_button.disabled {
+    color: var(--scale-white-30);
+
+    pointer-events: none;
+  }
+
+  .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+    color: var(--general-black);
+    background-color: var(--general-lime);
+
+    text-decoration: none;
+  }
+
+  table {
+    width: 100% !important; // stylelint-disable-line declaration-no-important
+    min-width: 1000px;
+
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+
+  th {
+    padding-inline: 8px;
+    padding-block: 16px;
+
+    color: var(--scale-white-80);
+
+    font: var(--title-t3);
+    text-align: start;
+  }
+
+  td {
+    width: auto;
+
+    border-top: 1px solid var(--scale-white-30);
+
+    color: var(--scale-white-80);
+
+    font: var(--body-b1);
+    white-space: nowrap;
+  }
+
+  tbody td {
+    padding: var(--cell-space);
+  }
+
+  tbody tr:first-child td {
+    border-top: none;
+  }
+
+  tbody tr:hover {
+    background-color: var(--general-blue);
+  }
+
+  tbody tr:hover td {
+    --offset: 4px;
+
+    box-shadow:
+      inset 0 var(--offset) 0 var(--additional-dark),
+      inset 0 calc(var(--offset) * -1) 0 var(--additional-dark);
+  }
+
+  @media only screen and (min-width: 768px) {
+    .dataTables_paginate {
+      justify-content: flex-start;
+    }
+  }
+}

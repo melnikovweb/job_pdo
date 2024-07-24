@@ -1,0 +1,9 @@
+.pj-empty-search-result {
+  display: grid;
+
+  &__title {
+    color: var(--scale-white-80);
+
+    font: var(--body-b1);
+  }
+}

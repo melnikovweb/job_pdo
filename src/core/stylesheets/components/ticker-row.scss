@@ -1,0 +1,54 @@
+@use 'src/shared/stylesheets/mixins/state';
+
+.ticker-row {
+  @include state.css(ticker-column-gap, 8px);
+  @include state.css(ticker-duration, 3000ms);
+
+  display: flex;
+  gap: var(--_ticker-column-gap);
+
+  overflow: hidden;
+
+  &__wrapper {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: var(--_ticker-column-gap);
+
+    min-width: 100%;
+
+    animation: ticker-row-animation var(--_ticker-duration) linear infinite;
+
+    &:where(.reverse *) {
+      animation: ticker-row-reverse-animation var(--_ticker-duration) linear infinite;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    @include state.css(ticker-column-gap, 24px);
+  }
+
+  @media only screen and (min-width: 1024px) {
+    @include state.css(ticker-column-gap, 40px);
+  }
+}
+
+@keyframes ticker-row-animation {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-100% - var(--_ticker-column-gap)));
+  }
+}
+
+@keyframes ticker-row-reverse-animation {
+  0% {
+    transform: translateX(calc(-100% - var(--_ticker-column-gap)));
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

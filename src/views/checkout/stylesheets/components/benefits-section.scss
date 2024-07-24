@@ -1,0 +1,22 @@
+.benefits-section {
+  --section-columns: 3;
+  --groups-offset: 24px;
+  --groups-gap-line: 1px;
+  --button-width: min(315px, 100%);
+
+  display: grid;
+
+  padding-block: 32px;
+
+  @media only screen and (min-width: 768px) {
+    padding-block: 48px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    padding-block: 120px;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    padding-block: 96px;
+  }
+}

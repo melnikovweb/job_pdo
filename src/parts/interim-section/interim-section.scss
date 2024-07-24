@@ -1,0 +1,74 @@
+@layer shared.parts.interim-section {
+  .interim-section {
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    grid-template-columns: 1fr;
+
+    padding-block: 32px;
+
+    &[data-theme='white'] {
+      --text-color: var(--general-black);
+    }
+
+    &[data-theme='blue'] {
+      --text-color: var(--typography-white);
+    }
+
+    &[data-theme='black'] {
+      --text-color: var(--scale-white-80);
+    }
+
+    &[data-theme='dark'] {
+      --text-color: var(--scale-white-80);
+    }
+
+    &__text {
+      color: var(--text-color);
+
+      font: var(--title-t3);
+    }
+
+    &__text br {
+      display: none;
+    }
+
+    &__actions {
+      display: grid;
+      justify-content: center;
+      gap: 16px;
+      grid-template-columns: 1fr;
+    }
+
+    &__button {
+      width: 100%;
+    }
+
+    @media only screen and (min-width: 768px) {
+      padding-block: 48px;
+    }
+
+    @media only screen and (min-width: 1024px) {
+      gap: 10px;
+      grid-template-columns: 1fr auto;
+
+      &__text br {
+        display: block;
+      }
+
+      &__actions {
+        grid-template-columns: repeat(auto-fit, 315px);
+      }
+    }
+
+    @media only screen and (min-width: 1280px) {
+      gap: 48px;
+      grid-template-columns: 1fr auto;
+
+      &__text {
+        text-wrap: balance;
+      }
+    }
+  }
+}

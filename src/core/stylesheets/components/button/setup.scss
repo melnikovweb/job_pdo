@@ -1,0 +1,12 @@
+@use 'config';
+@use 'themes';
+
+[data-button] {
+  @include themes.white;
+  @include themes.blue;
+  @include themes.dark;
+  @include themes.black;
+  @include themes.lime;
+  @include config.core;
+  @include config.size;
+}

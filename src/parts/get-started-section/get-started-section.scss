@@ -1,0 +1,27 @@
+@layer shared.parts.faq-get-started {
+  .get-started {
+    --group-columns: 2;
+
+    display: grid;
+    gap: 32px;
+
+    padding-block: 32px;
+
+    &__header {
+      --title-color: var(--typography-white);
+      --description-color: var(--scale-white-80);
+    }
+
+    @media only screen and (min-width: 768px) {
+      gap: 48px;
+
+      padding-block: 48px;
+    }
+
+    @media only screen and (min-width: 1024px) {
+      gap: 96px;
+
+      padding-block: 96px;
+    }
+  }
+}

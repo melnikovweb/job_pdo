@@ -1,0 +1,908 @@
+{
+  "data": [
+    {
+     "iso": "AX",
+     "tier": 3
+    },
+    {
+     "iso": "AL",
+     "tier": 3
+    },
+    {
+     "iso": "DZ",
+     "tier": 3
+    },
+    {
+     "iso": "AS",
+     "tier": 3
+    },
+    {
+     "iso": "AD",
+     "tier": 1
+    },
+    {
+     "iso": "AO",
+     "tier": 3
+    },
+    {
+     "iso": "AI",
+     "tier": 3
+    },
+    {
+     "iso": "AQ",
+     "tier": 3
+    },
+    {
+     "iso": "AG",
+     "tier": 3
+    },
+    {
+     "iso": "AN",
+     "tier": 3
+    },
+    {
+     "iso": "AR",
+     "tier": 3
+    },
+    {
+     "iso": "AM",
+     "tier": 3
+    },
+    {
+     "iso": "AW",
+     "tier": 3
+    },
+    {
+     "iso": "AU",
+     "tier": 1
+    },
+    {
+     "iso": "AT",
+     "tier": 1
+    },
+    {
+     "iso": "AZ",
+     "tier": 3
+    },
+    {
+     "iso": "BS",
+     "tier": 3
+    },
+    {
+     "iso": "BH",
+     "tier": 2
+    },
+    {
+     "iso": "BD",
+     "tier": 3
+    },
+    {
+     "iso": "BB",
+     "tier": 3
+    },
+    {
+     "iso": "BE",
+     "tier": 1
+    },
+    {
+     "iso": "BZ",
+     "tier": 3
+    },
+    {
+     "iso": "BJ",
+     "tier": 3
+    },
+    {
+     "iso": "BM",
+     "tier": 3
+    },
+    {
+     "iso": "BT",
+     "tier": 2
+    },
+    {
+     "iso": "BO",
+     "tier": 3
+    },
+    {
+     "iso": "BQ",
+     "tier": 3
+    },
+    {
+     "iso": "BW",
+     "tier": 3
+    },
+    {
+     "iso": "BV",
+     "tier": 3
+    },
+    {
+     "iso": "BR",
+     "tier": 3
+    },
+    {
+     "iso": "IO",
+     "tier": 3
+    },
+    {
+     "iso": "VG",
+     "tier": 3
+    },
+    {
+     "iso": "BN",
+     "tier": 3
+    },
+    {
+     "iso": "BG",
+     "tier": 3
+    },
+    {
+     "iso": "BF",
+     "tier": 3
+    },
+    {
+     "iso": "KH",
+     "tier": 3
+    },
+    {
+     "iso": "CM",
+     "tier": 3
+    },
+    {
+     "iso": "CA",
+     "tier": 1
+    },
+    {
+     "iso": "CV",
+     "tier": 3
+    },
+    {
+     "iso": "KY",
+     "tier": 3
+    },
+    {
+     "iso": "TD",
+     "tier": 3
+    },
+    {
+     "iso": "CL",
+     "tier": 1
+    },
+    {
+     "iso": "CN",
+     "tier": 3
+    },
+    {
+     "iso": "CX",
+     "tier": 3
+    },
+    {
+     "iso": "CC",
+     "tier": 3
+    },
+    {
+     "iso": "CO",
+     "tier": 3
+    },
+    {
+     "iso": "KM",
+     "tier": 3
+    },
+    {
+     "iso": "CG",
+     "tier": 3
+    },
+    {
+     "iso": "CK",
+     "tier": 3
+    },
+    {
+     "iso": "CR",
+     "tier": 3
+    },
+    {
+     "iso": "CI",
+     "tier": 3
+    },
+    {
+     "iso": "HR",
+     "tier": 3
+    },
+    {
+     "iso": "CW",
+     "tier": 3
+    },
+    {
+     "iso": "CY",
+     "tier": 2
+    },
+    {
+     "iso": "CZ",
+     "tier": 1
+    },
+    {
+     "iso": "DK",
+     "tier": 1
+    },
+    {
+     "iso": "DJ",
+     "tier": 3
+    },
+    {
+     "iso": "DM",
+     "tier": 3
+    },
+    {
+     "iso": "DO",
+     "tier": 3
+    },
+    {
+     "iso": "EC",
+     "tier": 3
+    },
+    {
+     "iso": "EG",
+     "tier": 3
+    },
+    {
+     "iso": "SV",
+     "tier": 3
+    },
+    {
+     "iso": "GB",
+     "tier": 1
+    },
+    {
+     "iso": "GQ",
+     "tier": 3
+    },
+    {
+     "iso": "ER",
+     "tier": 3
+    },
+    {
+     "iso": "EE",
+     "tier": 1
+    },
+    {
+     "iso": "ET",
+     "tier": 3
+    },
+    {
+     "iso": "FK",
+     "tier": 3
+    },
+    {
+     "iso": "FO",
+     "tier": 3
+    },
+    {
+     "iso": "FJ",
+     "tier": 3
+    },
+    {
+     "iso": "FI",
+     "tier": 1
+    },
+    {
+     "iso": "FR",
+     "tier": 1
+    },
+    {
+     "iso": "GF",
+     "tier": 3
+    },
+    {
+     "iso": "PF",
+     "tier": 3
+    },
+    {
+     "iso": "TF",
+     "tier": 3
+    },
+    {
+     "iso": "GA",
+     "tier": 3
+    },
+    {
+     "iso": "GM",
+     "tier": 3
+    },
+    {
+     "iso": "GE",
+     "tier": 3
+    },
+    {
+     "iso": "DE",
+     "tier": 1
+    },
+    {
+     "iso": "GH",
+     "tier": 3
+    },
+    {
+     "iso": "GI",
+     "tier": 3
+    },
+    {
+     "iso": "GR",
+     "tier": 1
+    },
+    {
+     "iso": "GL",
+     "tier": 3
+    },
+    {
+     "iso": "GD",
+     "tier": 3
+    },
+    {
+     "iso": "GP",
+     "tier": 3
+    },
+    {
+     "iso": "GU",
+     "tier": 3
+    },
+    {
+     "iso": "GT",
+     "tier": 3
+    },
+    {
+     "iso": "GG",
+     "tier": 3
+    },
+    {
+     "iso": "GY",
+     "tier": 3
+    },
+    {
+     "iso": "HM",
+     "tier": 3
+    },
+    {
+     "iso": "VA",
+     "tier": 3
+    },
+    {
+     "iso": "HN",
+     "tier": 3
+    },
+    {
+     "iso": "HK",
+     "tier": 3
+    },
+    {
+     "iso": "HU",
+     "tier": 2
+    },
+    {
+     "iso": "IS",
+     "tier": 1
+    },
+    {
+     "iso": "IN",
+     "tier": 3
+    },
+    {
+     "iso": "ID",
+     "tier": 3
+    },
+    {
+     "iso": "IE",
+     "tier": 1
+    },
+    {
+     "iso": "IM",
+     "tier": 3
+    },
+    {
+     "iso": "IL",
+     "tier": 3
+    },
+    {
+     "iso": "IT",
+     "tier": 1
+    },
+    {
+     "iso": "JM",
+     "tier": 3
+    },
+    {
+     "iso": "JP",
+     "tier": 2
+    },
+    {
+     "iso": "JE",
+     "tier": 3
+    },
+    {
+     "iso": "JO",
+     "tier": 3
+    },
+    {
+     "iso": "KZ",
+     "tier": 3
+    },
+    {
+     "iso": "KE",
+     "tier": 3
+    },
+    {
+     "iso": "KI",
+     "tier": 3
+    },
+    {
+     "iso": "XK",
+     "tier": 3
+    },
+    {
+     "iso": "KW",
+     "tier": 2
+    },
+    {
+     "iso": "KG",
+     "tier": 3
+    },
+    {
+     "iso": "LA",
+     "tier": 3
+    },
+    {
+     "iso": "LV",
+     "tier": 1
+    },
+    {
+     "iso": "LS",
+     "tier": 3
+    },
+    {
+     "iso": "LR",
+     "tier": 3
+    },
+    {
+     "iso": "LI",
+     "tier": 1
+    },
+    {
+     "iso": "LT",
+     "tier": 1
+    },
+    {
+     "iso": "LU",
+     "tier": 1
+    },
+    {
+     "iso": "MO",
+     "tier": 3
+    },
+    {
+     "iso": "MG",
+     "tier": 3
+    },
+    {
+     "iso": "MW",
+     "tier": 2
+    },
+    {
+     "iso": "MY",
+     "tier": 3
+    },
+    {
+     "iso": "MV",
+     "tier": 3
+    },
+    {
+     "iso": "MT",
+     "tier": 2
+    },
+    {
+     "iso": "MH",
+     "tier": 3
+    },
+    {
+     "iso": "MQ",
+     "tier": 3
+    },
+    {
+     "iso": "MR",
+     "tier": 3
+    },
+    {
+     "iso": "MU",
+     "tier": 2
+    },
+    {
+     "iso": "YT",
+     "tier": 3
+    },
+    {
+     "iso": "MX",
+     "tier": 3
+    },
+    {
+     "iso": "FM",
+     "tier": 3
+    },
+    {
+     "iso": "MD",
+     "tier": 3
+    },
+    {
+     "iso": "MC",
+     "tier": 3
+    },
+    {
+     "iso": "MN",
+     "tier": 3
+    },
+    {
+     "iso": "ME",
+     "tier": 3
+    },
+    {
+     "iso": "MS",
+     "tier": 3
+    },
+    {
+     "iso": "MA",
+     "tier": 3
+    },
+    {
+     "iso": "MZ",
+     "tier": 3
+    },
+    {
+     "iso": "NA",
+     "tier": 2
+    },
+    {
+     "iso": "NR",
+     "tier": 3
+    },
+    {
+     "iso": "NP",
+     "tier": 3
+    },
+    {
+     "iso": "NL",
+     "tier": 1
+    },
+    {
+     "iso": "AN",
+     "tier": 3
+    },
+    {
+     "iso": "NC",
+     "tier": 3
+    },
+    {
+     "iso": "NZ",
+     "tier": 1
+    },
+    {
+     "iso": "NE",
+     "tier": 3
+    },
+    {
+     "iso": "NG",
+     "tier": 3
+    },
+    {
+     "iso": "NU",
+     "tier": 3
+    },
+    {
+     "iso": "NF",
+     "tier": 3
+    },
+    {
+     "iso": "MK",
+     "tier": 2
+    },
+    {
+     "iso": "GB",
+     "tier": 1
+    },
+    {
+     "iso": "MP",
+     "tier": 3
+    },
+    {
+     "iso": "NO",
+     "tier": 1
+    },
+    {
+     "iso": "OM",
+     "tier": 3
+    },
+    {
+     "iso": "PK",
+     "tier": 3
+    },
+    {
+     "iso": "PW",
+     "tier": 3
+    },
+    {
+     "iso": "PA",
+     "tier": 3
+    },
+    {
+     "iso": "PG",
+     "tier": 3
+    },
+    {
+     "iso": "PY",
+     "tier": 3
+    },
+    {
+     "iso": "PE",
+     "tier": 3
+    },
+    {
+     "iso": "PH",
+     "tier": 3
+    },
+    {
+     "iso": "PN",
+     "tier": 3
+    },
+    {
+     "iso": "PL",
+     "tier": 1
+    },
+    {
+     "iso": "PT",
+     "tier": 1
+    },
+    {
+     "iso": "PR",
+     "tier": 3
+    },
+    {
+     "iso": "QA",
+     "tier": 2
+    },
+    {
+     "iso": "RE",
+     "tier": 3
+    },
+    {
+     "iso": "RO",
+     "tier": 2
+    },
+    {
+     "iso": "RW",
+     "tier": 3
+    },
+    {
+     "iso": "BL",
+     "tier": 3
+    },
+    {
+     "iso": "SH",
+     "tier": 3
+    },
+    {
+     "iso": "KN",
+     "tier": 3
+    },
+    {
+     "iso": "LC",
+     "tier": 3
+    },
+    {
+     "iso": "MF",
+     "tier": 3
+    },
+    {
+     "iso": "PM",
+     "tier": 3
+    },
+    {
+     "iso": "VC",
+     "tier": 3
+    },
+    {
+     "iso": "WS",
+     "tier": 3
+    },
+    {
+     "iso": "SM",
+     "tier": 1
+    },
+    {
+     "iso": "ST",
+     "tier": 2
+    },
+    {
+     "iso": "SA",
+     "tier": 3
+    },
+    {
+     "iso": "GB",
+     "tier": 1
+    },
+    {
+     "iso": "SN",
+     "tier": 3
+    },
+    {
+     "iso": "RS",
+     "tier": 3
+    },
+    {
+     "iso": "SC",
+     "tier": 3
+    },
+    {
+     "iso": "SL",
+     "tier": 3
+    },
+    {
+     "iso": "SG",
+     "tier": 1
+    },
+    {
+     "iso": "SX",
+     "tier": 3
+    },
+    {
+     "iso": "SK",
+     "tier": 1
+    },
+    {
+     "iso": "SI",
+     "tier": 1
+    },
+    {
+     "iso": "SB",
+     "tier": 2
+    },
+    {
+     "iso": "ZA",
+     "tier": 3
+    },
+    {
+     "iso": "GS",
+     "tier": 3
+    },
+    {
+     "iso": "KR",
+     "tier": 1
+    },
+    {
+     "iso": "ES",
+     "tier": 1
+    },
+    {
+     "iso": "LK",
+     "tier": 3
+    },
+    {
+     "iso": "SR",
+     "tier": 3
+    },
+    {
+     "iso": "SJ",
+     "tier": 3
+    },
+    {
+     "iso": "SZ",
+     "tier": 3
+    },
+    {
+     "iso": "SE",
+     "tier": 1
+    },
+    {
+     "iso": "CH",
+     "tier": 1
+    },
+    {
+     "iso": "TJ",
+     "tier": 3
+    },
+    {
+     "iso": "TZ",
+     "tier": 3
+    },
+    {
+     "iso": "TH",
+     "tier": 3
+    },
+    {
+     "iso": "TL",
+     "tier": 3
+    },
+    {
+     "iso": "TG",
+     "tier": 3
+    },
+    {
+     "iso": "TK",
+     "tier": 3
+    },
+    {
+     "iso": "TO",
+     "tier": 3
+    },
+    {
+     "iso": "TT",
+     "tier": 3
+    },
+    {
+     "iso": "TN",
+     "tier": 3
+    },
+    {
+     "iso": "TR",
+     "tier": 3
+    },
+    {
+     "iso": "TM",
+     "tier": 3
+    },
+    {
+     "iso": "TC",
+     "tier": 3
+    },
+    {
+     "iso": "TV",
+     "tier": 3
+    },
+    {
+     "iso": "UG",
+     "tier": 3
+    },
+    {
+     "iso": "UA",
+     "tier": 3
+    },
+    {
+     "iso": "AE",
+     "tier": 3
+    },
+    {
+     "iso": "GB",
+     "tier": 1
+    },
+    {
+     "iso": "UM",
+     "tier": 3
+    },
+    {
+     "iso": "UY",
+     "tier": 2
+    },
+    {
+     "iso": "VI",
+     "tier": 3
+    },
+    {
+     "iso": "UZ",
+     "tier": 3
+    },
+    {
+     "iso": "VU",
+     "tier": 3
+    },
+    {
+     "iso": "VN",
+     "tier": 3
+    },
+    {
+     "iso": "GB",
+     "tier": 1
+    },
+    {
+     "iso": "WF",
+     "tier": 3
+    },
+    {
+     "iso": "ZM",
+     "tier": 3
+    }
+   ]
+}

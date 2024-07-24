@@ -1,0 +1,18 @@
+.hm-actions {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media only screen and (min-width: 1024px) {
+    justify-content: end;
+    grid-template-columns: repeat(2, auto);
+
+    &__action {
+      padding-inline: 24px;
+    }
+  }
+}

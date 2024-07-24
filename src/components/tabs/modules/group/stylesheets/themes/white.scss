@@ -1,0 +1,19 @@
+@use '../variables';
+
+@mixin white {
+  &[#{variables.$THEME_BORDER}='white'] {
+    --border-color: var(--typography-white);
+  }
+
+  &[#{variables.$THEME_PRIMARY}='white'] {
+    --primary-color: var(--additional-dark);
+    --primary-background: var(--typography-white);
+  }
+
+  &[#{variables.$THEME_SECONDARY}='white'] {
+    --secondary-color: var(--additional-dark);
+    --secondary-background: var(--typography-white);
+    --dropdown-color: var(--additional-blue-5);
+    --dropdown-background: var(--additional-dark);
+  }
+}

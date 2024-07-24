@@ -1,0 +1,161 @@
+@layer shared.parts.all-payment-methods {
+
+	.all-payment-methods {
+		--padding-block: 32px;
+
+		--title-color: var(--typography-white);
+		--description-color: var(--scale-white-80);
+		--ticker-column-gap: 16px;
+		--ticker-duration: 80000ms;
+
+		--preview-width: 66px;
+		--preview-height: 56px;
+		--preview-radius: 8px;
+		--preview-pading: 14px 8px;
+		--previews-offset: 32px;
+		--header-column-space: 0;
+		--content-column-space: 0;
+
+		--items-row-gap: 8px;
+		--items-column-gap: 4px;
+
+		row-gap: 24px;
+		overflow: hidden;
+
+	}
+
+	.all-payment-methods:not([data-indent="none"]) {
+		padding-block: var(--padding-block);
+	}
+
+	.all-payment-methods__header {
+		--_columns-offset: calc(var(--header-column-space) + 1);
+
+		display: grid;
+		grid-column: var(--_columns-offset) / calc(var(--_columns-offset) * -1);
+	}
+
+	.all-payment-methods__previews {
+		--_columns-offset: calc(var(--content-column-space) + 1);
+
+		display: flex;
+		flex-direction: column;
+		gap: var(--items-row-gap);
+	}
+
+	.all-payment-methods__preview-wrapper {
+		display: flex;
+		justify-content: center;
+		gap: var(--items-column-gap);
+	}
+
+
+	.all-payment-methods__preview {
+		width: var(--preview-width);
+		height: var(--preview-height);
+		overflow: hidden;
+		border-radius: var(--preview-radius);
+		background-color: var(--typography-white);
+		display: none;
+	}
+
+	.all-payment-methods__preview img {
+		height: 100%;
+		width: 100%;
+		object-fit: contain;
+	}
+
+
+	@media only screen and (min-width: 360px) {
+
+		.all-payment-methods {
+			--items-row-gap: 8px;
+			--items-column-gap: 8px;
+		}
+	}
+
+
+	@media only screen and (min-width: 768px) {
+
+		.all-payment-methods {
+			--preview-width: 118px;
+			--preview-height: 100px;
+			--preview-redius: 16px;
+			--preview-pading: 16px;
+			--previews-offset: 64px;
+			--padding-block: 48px;
+
+			--items-row-gap: 16px;
+			--items-column-gap: 16px;
+
+			row-gap: 48px;
+		}
+	}
+
+
+	@media only screen and (min-width: 1024px) {
+
+		.all-payment-methods {
+			--ticker-column-gap: 24px;
+			--previews-offset: 52px;
+			--padding-block: 96px;
+
+			--items-row-gap: 24px;
+			--items-column-gap: 24px;
+
+			row-gap: 80px;
+		}
+	}
+
+	@media only screen and (width < 1440px) {
+
+		.all-payment-methods__preview-wrapper:nth-child(1) .all-payment-methods__preview:nth-child(-n + 5),
+		.all-payment-methods__preview-wrapper:nth-child(2) .all-payment-methods__preview:not(:nth-child(-n + 5)):nth-child(-n + 9),
+		.all-payment-methods__preview-wrapper:nth-child(3) .all-payment-methods__preview:not(:nth-last-child(-n + 4)):nth-last-child(-n + 9),
+		.all-payment-methods__preview-wrapper:nth-child(4) .all-payment-methods__preview:nth-last-child(-n + 4) {
+			display: block;
+		}
+	}
+
+	@media only screen and (min-width: 1440px) {
+
+		.all-payment-methods__preview-wrapper:nth-child(1) .all-payment-methods__preview:nth-child(-n + 5),
+		.all-payment-methods__preview-wrapper:nth-child(2) .all-payment-methods__preview:not(:nth-child(-n + 5), :nth-last-child(-n + 5)),
+		.all-payment-methods__preview-wrapper:nth-child(3) .all-payment-methods__preview:nth-last-child(-n + 5) {
+			display: block;
+		}
+
+		.all-payment-methods__preview-wrapper:last-child {
+			display: none;
+		}
+	}
+
+	@media only screen and (min-width: 1280px) {
+
+		.all-payment-methods {
+			--ticker-column-gap: 40px;
+			--header-column-space: 1;
+			--previews-offset: 48px;
+
+			--items-row-gap: 32px;
+			--items-column-gap: 32px;
+		}
+	}
+
+	@media only screen and (min-width: 1440px) {
+
+		.all-payment-methods {
+			--header-column-space: 2;
+			--previews-offset: 112px;
+		}
+	}
+
+	@media only screen and (min-width: 1920px) {
+
+		.all-payment-methods {
+			--preview-radius: 16px;
+			--header-column-space: 3;
+			--content-column-space: 1;
+		}
+	}
+}

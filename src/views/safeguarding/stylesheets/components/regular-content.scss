@@ -1,0 +1,34 @@
+@use 'src/shared/stylesheets/mixins/regular-content';
+
+.sf-regular-content {
+  @include regular-content.set;
+
+  display: grid;
+  gap: var(--content-gap);
+
+  color: var(--typography-white);
+
+  :where(h1, h2, h3, h4, h5, h6) {
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: var(--general-lime);
+    text-underline-position: under;
+    text-decoration-thickness: 2px;
+  }
+
+  p {
+    color: var(--scale-white-80);
+
+    font: var(--body-b2);
+  }
+
+  *:not(li *) + blockquote {
+    margin-top: calc((var(--content-gap) * -1) + 8px);
+  }
+
+  a {
+    color: var(--general-lime);
+
+    text-decoration: underline;
+  }
+}

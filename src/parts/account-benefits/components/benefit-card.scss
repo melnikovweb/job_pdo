@@ -1,0 +1,113 @@
+@layer shared.parts.account-benefits-card {
+  .account-benefit-card {
+    $self: &;
+
+    padding: 16px;
+
+    border-radius: 8px;
+
+    &.black {
+      color: var(--typography-white);
+      background-color: var(--general-black);
+    }
+
+    &.blue {
+      color: var(--typography-white);
+      background-color: var(--general-blue);
+    }
+
+    &.white {
+      color: var(--general-blue);
+      background-color: var(--typography-white);
+    }
+
+    &__header {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      & + #{$self}__subtitle {
+        margin-top: 16px;
+      }
+    }
+
+    &__images {
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
+    }
+
+    &__image {
+      max-width: 44px;
+      height: auto;
+    }
+
+    &__title {
+      font: var(--title-t3);
+
+      br {
+        display: none;
+      }
+    }
+
+    &__subtitle {
+      color: var(--general-lime);
+
+      font: var(--title-t4);
+    }
+
+    &__text {
+      color: var(--scale-white-80);
+
+      font: var(--body-b2);
+    }
+
+    @media only screen and (min-width: 768px) {
+      padding: 24px;
+
+      border-radius: 16px;
+
+      &__header {
+        gap: 24px;
+
+        & + #{$self}__subtitle {
+          margin-top: 24px;
+        }
+      }
+
+      &__title br:not(.break-point-1440) {
+        display: block;
+      }
+
+      &__text {
+        margin-top: 4px;
+      }
+
+      &__image {
+        max-width: 72px;
+      }
+
+      &.black + .blue + .black {
+        order: 1;
+      }
+    }
+
+    @media only screen and (min-width: 1440px) {
+      flex: 1 0 0;
+
+      &__title br {
+        display: block;
+      }
+
+      &.black + .blue + .black {
+        order: 0;
+      }
+
+      &.fixum {
+        flex: 0 1 auto;
+
+        width: 315px;
+      }
+    }
+  }
+}

@@ -1,0 +1,96 @@
+@use 'src/shared/stylesheets/mixins/state';
+
+input[type='checkbox'] {
+  @include state.css(checkbox-size, 24px);
+  @include state.css(checkbox-color, var(--scale-white-80));
+
+  all: unset;
+
+  position: relative;
+
+  display: block;
+  flex-shrink: 0;
+
+  width: var(--_checkbox-size);
+  height: var(--_checkbox-size);
+
+  border-radius: 4px;
+  outline: 1px solid var(--_checkbox-color);
+  isolation: isolate;
+
+  &::before,
+  &::after {
+    content: '';
+
+    position: absolute;
+    inset: 0;
+  }
+
+  &::before {
+    z-index: -1;
+
+    border-radius: 4px;
+
+    background-color: var(--general-blue);
+    opacity: 0;
+
+    transition: all 150ms;
+    scale: 1;
+  }
+
+  &::after {
+    top: 50%;
+    left: 50%;
+
+    width: 60%;
+    height: 30%;
+
+    visibility: hidden;
+
+    box-shadow: -1px 1px 0 var(--typography-white);
+    opacity: 0;
+
+    translate: -50% -104%;
+    rotate: -45deg;
+    scale: 0.5;
+
+    transition: all 50ms ease-in-out;
+  }
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+
+  &:checked {
+    outline-color: var(--general-blue);
+
+    background-color: var(--general-blue);
+
+    &::after {
+      visibility: visible;
+      scale: 1;
+
+      opacity: 1;
+
+      transition-duration: 100ms;
+    }
+  }
+
+  &:disabled {
+    outline-color: var(--typograpty-secondary);
+
+    background-color: var(--typograpty-secondary);
+
+    pointer-events: none;
+  }
+
+  &:hover,
+  label:hover & {
+    &::before {
+      border-radius: 50%;
+
+      opacity: 0.15;
+      scale: 2;
+    }
+  }
+}

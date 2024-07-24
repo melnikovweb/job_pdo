@@ -1,0 +1,109 @@
+.partnership {
+  --controls-size: 40px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  padding-block: 32px;
+
+  overflow: hidden;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    width: 100%;
+  }
+
+  &__content {
+    display: grid;
+    column-gap: 20px;
+    grid-template-columns: repeat(6, 1fr);
+
+    width: 100%;
+  }
+
+  &__title {
+    color: var(--additional-dark);
+
+    font: var(--headline-h2);
+  }
+
+  &__title:where([data-theme='black'] *),
+  &__title:where([data-theme='dark'] *) {
+    color: var(--typography-white);
+  }
+
+  &__actions {
+    --arrow-button-size: 56px;
+
+    display: flex;
+    gap: 30px;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    aspect-ratio: 1;
+    width: 1em;
+
+    border: none;
+    border-radius: 4px;
+
+    background: transparent;
+
+    font-size: var(--controls-size);
+
+    transition: all 300ms;
+
+    &::before {
+      font-size: max(18px, 0.4em);
+    }
+
+    &:active {
+      color: var(--typography-white);
+      background: var(--general-blue);
+
+      transition: none;
+    }
+  }
+
+  &__button[class*='disabled'] {
+    pointer-events: none;
+  }
+
+  @media (hover) {
+    &__button:hover {
+      color: var(--typography-white);
+      background: var(--general-blue);
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    --controls-size: 56px;
+
+    padding-block: 56px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    gap: 64px;
+
+    padding-block: 120px;
+  }
+}
+
+.partner-item {
+  grid-column: span 2;
+}

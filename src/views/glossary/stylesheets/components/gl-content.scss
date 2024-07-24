@@ -1,0 +1,37 @@
+@use 'src/shared/stylesheets/mixins/regular-content';
+@use 'src/shared/stylesheets/mixins/page-content';
+
+.gl-content {
+  padding-bottom: 24px;
+
+  &__title {
+    display: inline-block;
+
+    margin-bottom: 16px;
+
+    color: var(--typography-white);
+
+    font: var(--headline-h4);
+
+    &::after {
+      content: '';
+
+      display: block;
+
+      height: 2px;
+
+      background: var(--general-lime);
+    }
+  }
+
+  &__text {
+    @include regular-content.set;
+    @include page-content.set;
+  }
+
+  @media only screen and (min-width: 768px) {
+    &__title {
+      margin-bottom: 32px;
+    }
+  }
+}

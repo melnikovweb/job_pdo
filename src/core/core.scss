@@ -1,0 +1,8 @@
+@use 'sass:meta';
+@layer libs, outdated, core, shared;
+
+// TODO: have to be replaced core.bundle.setup -> core after outdated core styles will be removed
+
+@layer core.bundle.setup {
+  @include meta.load-css('stylesheets');
+}

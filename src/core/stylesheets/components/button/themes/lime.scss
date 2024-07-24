@@ -1,0 +1,24 @@
+@use 'src/shared/stylesheets/mixins/state';
+
+@mixin lime {
+  &[data-style~='lime'] {
+    @include state.css(button-color, var(--typography-default));
+    @include state.css(button-background, var(--general-lime));
+    @include state.css(button-border, var(--general-lime));
+    @include state.css(button-color-hover, var(--general-lime));
+    @include state.css(button-background-hover, var(--additional-dark));
+    @include state.css(button-border-hover, var(--additional-dark));
+  }
+
+  &[data-style~='lime'][data-style~='text'] {
+    @include state.css(button-color, var(--general-lime));
+    @include state.css(button-background, transparent);
+    @include state.css(button-border, transparent);
+    @include state.css(button-color-hover, var(--general-lime));
+    @include state.css(button-background-hover, transparent);
+    @include state.css(button-border-hover, transparent);
+    @include state.css(button-color-disabled, var(--scale-white-60));
+    @include state.css(button-color-disabled, transparent);
+    @include state.css(button-border-disabled, transparent);
+  }
+}

@@ -1,0 +1,12 @@
+@use 'src/shared/stylesheets/mixins/state';
+
+@mixin black {
+  &[data-style~='black'] {
+    @include state.css(button-color, var(--general-lime));
+    @include state.css(button-background, var(--additional-dark));
+    @include state.css(button-border, var(--additional-dark));
+    @include state.css(button-color-hover, var(--general-lime));
+    @include state.css(button-background-hover, var(--additional-dark-2));
+    @include state.css(button-border-hover, var(--additional-dark-2));
+  }
+}

@@ -1,0 +1,34 @@
+@use 'sass:map';
+@use 'sass:list';
+@use 'sass:selector';
+
+$colors-map: (
+  'black': var(--typography-white),
+  'dark': var(--typography-white),
+  'blue': var(--typography-white),
+  'white': var(--general-blue),
+);
+
+.hd-logo {
+  display: flex;
+  align-self: center;
+
+  height: 24px;
+
+  svg {
+    width: auto;
+    height: 100%;
+
+    transition: fill 300ms;
+
+    * {
+      transition: inherit;
+    }
+  }
+
+  @each $name, $value in $colors-map {
+    &:where([data-header-theme='#{$name}'] *) {
+      --header-logo-color: #{$value};
+    }
+  }
+}

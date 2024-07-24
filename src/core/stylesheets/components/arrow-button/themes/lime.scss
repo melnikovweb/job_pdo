@@ -1,0 +1,20 @@
+@use 'src/shared/stylesheets/mixins/state';
+
+@mixin lime {
+  &[data-style='lime'] {
+    @include state.css(arrow-button-color, var(--typography-white));
+    @include state.css(arrow-button-background, transparent);
+
+    &:active {
+      @include state.css(arrow-button-color, var(--typography-default));
+      @include state.css(arrow-button-background, var(--general-lime));
+    }
+
+    @media (hover) {
+      &:hover {
+        @include state.css(arrow-button-color, var(--typography-default));
+        @include state.css(arrow-button-background, var(--general-lime));
+      }
+    }
+  }
+}

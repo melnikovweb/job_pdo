@@ -1,0 +1,59 @@
+.stepper {
+  --template-step-columns: 1fr;
+  --step-gap: 16px;
+  --step-radius: 16px;
+
+  display: grid;
+  align-items: start;
+  gap: 16px var(--container-gutter);
+  grid-template-columns: var(--template-step-columns);
+
+  counter-reset: stepper;
+
+  &__step {
+    display: grid;
+    gap: var(--step-gap);
+
+    padding: var(--step-gap);
+
+    border-radius: var(--step-radius);
+
+    color: var(--typography-white);
+
+    font: var(--headline-h5);
+
+    counter-increment: stepper;
+
+    transition: all 300ms;
+
+    &:hover {
+      background-color: var(--scale-white-5);
+
+      &:where([data-theme='blue'] *) {
+        background-color: var(--scale-white-20);
+      }
+    }
+
+    &::before {
+      content: counter(stepper, decimal-leading-zero) '.';
+
+      color: var(--general-lime);
+
+      font: var(--headline-h4);
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    --step-gap: 24px;
+    --step-radius: 24px;
+    --template-step-columns: repeat(2, 1fr);
+  }
+
+  @media only screen and (min-width: 1024px) {
+    --step-gap: 32px;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    --template-step-columns: repeat(4, 1fr);
+  }
+}

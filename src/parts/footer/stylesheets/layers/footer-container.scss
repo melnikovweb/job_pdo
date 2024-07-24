@@ -1,0 +1,13 @@
+.ft-footer-container {
+  row-gap: 48px;
+
+  padding-block: 32px;
+
+  @media only screen and (min-width: 768px) {
+    padding-block: 48px;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    row-gap: 56px;
+  }
+}

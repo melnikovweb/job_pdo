@@ -1,0 +1,31 @@
+<?php
+
+add_action('init', 'register_career_location');
+function register_career_location()
+{
+  /**
+   * Taxonomy: Career Location.
+   */
+
+  $labels = [
+    'name'                  => __('Career Locations', 'SECRET-domain-admin'),
+    'singular_name'         => __('Career Location'),
+  ];
+
+  $args = [
+    'label'                 => __('Career Location', 'SECRET-domain-admin'),
+    'labels'                => $labels,
+    'public'                => false,
+    'publicly_queryable'    => null,
+    'show_in_nav_menus'     => true,
+    'show_ui'               => true,
+    'show_in_menu'          => true,
+    'show_in_rest'          => true,
+    'show_tagcloud'         => true,
+    'show_in_quick_edit'    => true,
+    'show_in_admin_bar'     => true,
+    'hierarchical'          => true,
+    'show_admin_column'     => true,
+  ];
+  register_taxonomy('career-location', ['career'], $args);
+}

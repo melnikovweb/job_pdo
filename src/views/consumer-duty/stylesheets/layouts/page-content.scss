@@ -1,0 +1,5 @@
+@use 'src/shared/stylesheets/mixins/page-content';
+
+.du-page-content {
+  @include page-content.set;
+}

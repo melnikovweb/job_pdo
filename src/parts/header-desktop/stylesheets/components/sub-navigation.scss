@@ -1,0 +1,97 @@
+.hd-sub-navigation {
+  > ul {
+    display: flex;
+    gap: 32px;
+  }
+
+  ul {
+    color: var(--primary-text-color);
+
+    font: var(--body-b2);
+
+    ul {
+      position: absolute;
+      top: 100%;
+      left: 0;
+
+      width: max-content;
+      min-width: 255px;
+
+      color: var(--secondary-text-color);
+      background-color: var(--primary-background);
+
+      transition: all 300ms;
+
+      will-change: clip-path;
+      clip-path: inset(0 0 100% 0);
+
+      &::before,
+      &::after {
+        content: '';
+
+        display: block;
+
+        height: 8px;
+      }
+    }
+  }
+
+  li {
+    position: relative;
+
+    display: grid;
+    align-items: start;
+
+    &:hover > ul {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding-block: 8px;
+
+    color: currentcolor;
+
+    transition: all 300ms;
+
+    &::before {
+      order: 1;
+
+      color: var(--accent-color);
+
+      font-size: 24px;
+
+      transition: all 300ms;
+    }
+
+    &:where(:has(~ ul)) {
+      pointer-events: none;
+    }
+
+    &:where(li ul, :not(:has(~ ul))) {
+      &::before {
+        content: none;
+      }
+    }
+
+    &:where(li:hover *) {
+      &::before {
+        rotate: 180deg;
+      }
+    }
+
+    &:where(li ul *) {
+      padding-inline: 16px 24px;
+      padding-block: 4px;
+
+      &:hover {
+        color: var(--accent-text-color);
+        background: var(--secondary-background);
+      }
+    }
+  }
+}

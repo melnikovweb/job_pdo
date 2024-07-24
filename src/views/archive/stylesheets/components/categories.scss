@@ -1,0 +1,28 @@
+.categories {
+  display: grid;
+  gap: 24px;
+
+  padding-block: 32px 24px;
+
+  &__title {
+    color: var(--general-blue);
+
+    font: var(--headline-h1);
+  }
+
+  @media only screen and (min-width: 360px) {
+    padding-block: 48px 40px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    gap: 32px;
+
+    padding-block-end: 56px;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    gap: 32px;
+
+    padding-block-end: 96px;
+  }
+}

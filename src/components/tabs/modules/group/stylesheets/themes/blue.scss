@@ -1,0 +1,19 @@
+@use '../variables';
+
+@mixin blue {
+  &[#{variables.$THEME_BORDER}='blue'] {
+    --border-color: var(--general-blue);
+  }
+
+  &[#{variables.$THEME_PRIMARY}='blue'] {
+    --primary-color: var(--typography-white);
+    --primary-background: var(--general-blue);
+  }
+
+  &[#{variables.$THEME_SECONDARY}='blue'] {
+    --secondary-color: var(--typography-white);
+    --secondary-background: var(--general-blue);
+    --dropdown-color: var(--typography-white);
+    --dropdown-background: var(--general-blue);
+  }
+}

@@ -1,0 +1,25 @@
+.ft-services {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 32px;
+	padding-top: 16px;
+	border-top: 1px solid var(--scale-white-20);
+}
+
+.ft-services__item {
+	height: 24px;
+
+}
+
+.ft-services__item img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+@media only screen and (min-width: 1024px) {
+	.ft-services {
+		padding-top: 32px;
+	}
+  }

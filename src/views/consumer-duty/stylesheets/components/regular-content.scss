@@ -1,0 +1,5 @@
+@use 'src/shared/stylesheets/mixins/regular-content';
+
+.du-regular-content {
+  @include regular-content.set;
+}

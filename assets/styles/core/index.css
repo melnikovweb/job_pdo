@@ -1,0 +1,7 @@
+@layer libs, outdated, core, shared;
+
+@import url('../../icons/SECRET-landing/style.css') layer(libs.swiper);
+@import url('../swiper.css?ver=1.0.0') layer(libs.swiper);
+@import url('../choices.min.css?ver=1.0.0') layer(libs.choices);
+@import url('./sections/index.css?ver=1.0.0') layer(core);
+@import url('./components/index.css?ver=1.0.0') layer(core);

@@ -1,0 +1,15 @@
+.pj-header {
+  row-gap: 24px;
+
+  &__title {
+    color: var(--general-lime);
+
+    font: var(--headline-h1);
+  }
+
+  &__description {
+    color: var(--typography-white);
+
+    font: var(--body-b1);
+  }
+}

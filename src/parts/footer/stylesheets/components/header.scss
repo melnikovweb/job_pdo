@@ -1,0 +1,80 @@
+.ft-header {
+  --logo-size: 86px;
+
+  display: grid;
+  align-items: center;
+  gap: 16px;
+  grid-template-areas: 'logo logo logo' 'navigation navigation navigation' 'networks networks networks';
+  grid-template-columns: auto auto 1fr;
+
+  &__logo {
+    grid-area: logo;
+
+    width: var(--logo-size);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__navigation {
+    display: flex;
+    grid-area: navigation;
+    gap: 8px;
+
+    padding-top: 8px;
+  }
+
+  &__link {
+    flex-grow: 1;
+
+    padding-inline: 8px;
+    padding-block: 0 8px;
+
+    border-bottom: 2px solid transparent;
+
+    color: var(--scale-white-90);
+
+    font: var(--title-t3);
+    text-align: center;
+    text-transform: uppercase;
+
+    transition: all 300ms;
+
+    &.active {
+      border-color: var(--general-lime);
+
+      color: var(--typography-white);
+    }
+  }
+
+  &__social-networks {
+    display: flex;
+    grid-area: networks;
+    gap: 16px;
+  }
+
+  &__social-network {
+    color: var(--scale-white-40);
+
+    font-size: 32px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    --logo-size: 100px;
+
+    gap: 32px;
+    grid-template-areas: 'logo logo logo' 'navigation navigation networks';
+
+    &__social-networks {
+      justify-self: end;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    gap: 40px;
+    grid-template-areas: 'logo navigation networks';
+  }
+}

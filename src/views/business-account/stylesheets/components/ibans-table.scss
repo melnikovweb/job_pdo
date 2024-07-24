@@ -1,0 +1,261 @@
+.iban {
+  padding-block: clamp(48px, 8vw - 1rem, 80px);
+
+  &__title {
+    color: var(--clr-lime);
+
+    font: var(--headline-h1);
+    text-align: center;
+  }
+
+  &__p {
+    // todo - need to check why we use (p)
+    margin: 24px 0 80px;
+
+    color: var(--scale-white-80);
+
+    font: var(--body-b1);
+    text-align: center;
+  }
+
+  &__type {
+    margin-top: 32px;
+
+    color: var(--clr-lime);
+
+    font: var(--headline-h3);
+    text-align: left;
+  }
+
+  &__type-text {
+    margin-top: 48px;
+    margin-bottom: 12px;
+
+    color: var(--scale-white-80);
+
+    font: var(--body-b1);
+    text-align: left;
+  }
+
+  &__tab-rows {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__tab {
+    min-width: 904px;
+  }
+
+  &__tabs {
+    overflow-x: auto;
+  }
+
+  &__tabs::-webkit-scrollbar {
+    width: 1px;
+    height: 4px;
+  }
+
+  &__tabs::-webkit-scrollbar-track:horizontal {
+    border-radius: 8px;
+
+    background: #4e5159;
+  }
+
+  &__tabs::-webkit-scrollbar-thumb:horizontal {
+    border-radius: 8px;
+
+    background-color: var(--clr-orange);
+  }
+
+  &__cols-header {
+    display: grid;
+    grid-gap: 32px;
+    grid-template-columns: repeat(3, 1fr);
+
+    padding: 12px 0;
+  }
+
+  &__col-header {
+    color: var(--scale-white-80);
+
+    font: var(--title-t3);
+  }
+
+  &__tab-row {
+    display: grid;
+    grid-gap: 32px;
+    grid-template-columns: repeat(3, 1fr);
+
+    padding: 20px 0;
+
+    border-radius: 2px;
+
+    background-color: transparent;
+
+    cursor: pointer;
+
+    transition-duration: 400ms;
+  }
+
+  &__tab-row-left {
+    display: flex;
+    align-items: center;
+  }
+
+  &__tab-row-left-img {
+    width: 28px;
+    margin-right: 16px;
+
+    border-radius: 4px;
+    object-fit: contain;
+  }
+
+  &__tab-row-left-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__tab-row-left-text span {
+    color: var(--scale-white-80);
+
+    font: var(--title-t3);
+  }
+
+  &__tab-row-left-text span:first-child {
+    color: var(--typography-white, #fff);
+  }
+
+  &__tab-row-center {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    overflow: hidden;
+
+    color: var(--scale-white-80);
+
+    font: var(--body-b1);
+    -webkit-box-orient: vertical;
+  }
+
+  &__tab-row-center-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    max-width: 542px;
+
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+  }
+
+  &__tab-row-center-content.lime {
+    color: var(--general-lime, #c4ff1c);
+    opacity: 0.8;
+
+    font: var(--title-t3);
+  }
+
+  &__tab-row-center-content:not(.shown) {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+  }
+
+  &__tab-row b {
+    font-weight: 600;
+  }
+
+  &__tab-row-label {
+    display: none;
+  }
+
+  &__tab-row-right {
+    display: flex;
+  }
+
+  @media (min-width: 415px) {
+    &__tab-row-left-img {
+      width: auto;
+    }
+
+    &__tab-row-left-text {
+      row-gap: 16px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    &__type-text {
+      margin-bottom: 36px;
+    }
+
+    &__type {
+      margin-top: 48px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    &__type {
+      margin-top: 80px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    &__cols-header {
+      grid-gap: 20px;
+    }
+
+    &__tab-row {
+      grid-gap: 20px;
+    }
+  }
+
+  @media (min-width: 999px) {
+    &__p {
+      width: 890px;
+      margin-top: 32px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+
+  @media (max-width: 999px) {
+    &__p {
+      margin-bottom: 48px;
+    }
+
+    &__type-text {
+      margin-top: 24px !important; /* stylelint-disable-line declaration-no-important */
+    }
+  }
+
+  @media (max-width: 600px) {
+    &__p {
+      margin-bottom: 32px;
+    }
+  }
+}
+
+.more-info {
+  display: flex;
+
+  border: none;
+
+  color: var(--general-lime);
+  background: none;
+
+  font: var(--title-t3);
+
+  cursor: pointer;
+
+  &.shown::before {
+    content: attr(data-hide-text);
+  }
+
+  &:not(.shown)::before {
+    content: attr(data-show-text);
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,102 @@
+@layer shared.parts.supported-countries-section {
+  .supported-countries-section {
+    --items-template-columns: 1fr;
+    --item-padding: 16px;
+    --item-height: auto;
+    --title-color: var(--typography-default);
+    --description-color: var(--typography-default);
+    --link-color: var(--typography-default);
+    --link-color-hover: var(--typography-white);
+    --accent-color: var(--general-blue);
+    --secondary-color: var(--accent-color);
+    --icon-width: 24px;
+
+    display: grid;
+    gap: 32px;
+
+    padding-block: 32px;
+
+    &__title {
+      color: var(--general-blue);
+
+      font: var(--title-t2);
+    }
+
+    &__items {
+      --border-size: 1px;
+
+      position: relative;
+
+      display: grid;
+      gap: var(--border-size);
+      grid-template-columns: var(--items-template-columns);
+
+      overflow: hidden;
+    }
+
+    &__item {
+      --icon-size: 40px;
+      --item-gap: 8px;
+
+      display: flex;
+      align-items: center;
+      gap: var(--item-gap);
+
+      height: var(--item-height);
+      margin: calc(var(--border-size) * -1);
+      padding: var(--item-padding);
+
+      border: var(--border-size) solid var(--additional-blue-15);
+
+      overflow: hidden;
+
+      color: var(--link-color);
+
+      font: var(--title-t2);
+
+      transition: all 300ms;
+
+      &:hover {
+        color: var(--link-color-hover);
+        background-color: var(--accent-color);
+      }
+    }
+
+    &__item-icon {
+      display: flex;
+
+      aspect-ratio: 1;
+      width: var(--icon-width);
+      min-width: var(--icon-width);
+      height: var(--icon-width);
+
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    @media only screen and (min-width: 768px) {
+      --items-template-columns: repeat(2, 1fr);
+      --item-padding: 24px 32px;
+      --item-height: 150px;
+      --icon-width: 42px;
+
+      gap: 48px;
+
+      padding-block: 48px;
+
+      &__item {
+        --item-gap: 16px;
+      }
+    }
+
+    @media only screen and (min-width: 1024px) {
+      --items-template-columns: repeat(3, 1fr);
+
+      padding-block: 96px;
+    }
+
+    @media only screen and (min-width: 1280px) {
+      gap: 96px;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@layer shared.parts.contact-form-section {
+  .contact-form-section {
+    padding-block: 32px;
+
+    &__wrap-form {
+      display: flex;
+      justify-content: center;
+    }
+
+    &__title {
+      margin-bottom: 32px;
+
+      color: var(--typography-white);
+
+      font: var(--headline-h1);
+      text-align: center;
+    }
+
+    @media only screen and (min-width: 768px) {
+      padding-block: 48px;
+
+      &__title {
+        margin-bottom: 48px;
+      }
+    }
+
+    @media only screen and (min-width: 1024px) {
+      padding-block: 96px;
+
+      &__title {
+        margin-bottom: 96px;
+      }
+    }
+  }
+}

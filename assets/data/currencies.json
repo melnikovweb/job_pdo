@@ -1,0 +1,80 @@
+[
+  {
+    "flag": "https://flagcdn.com/cz.svg",
+    "name": "Czech Koruna",
+    "currency": "CZK",
+    "symbol": "Kč"
+  },
+  {
+    "flag": "https://flagcdn.com/ca.svg",
+    "name": "Canadian Dollar",
+    "currency": "CAD",
+    "symbol": "$"
+  },
+  {
+    "flag": "https://flagcdn.com/dk.svg",
+    "name": "Danish Krone",
+    "currency": "DKK",
+    "symbol": "kr"
+  },
+  {
+    "flag": "https://flagcdn.com/eu.svg",
+    "name": "Euro",
+    "currency": "EUR",
+    "symbol": "€"
+  },
+  {
+    "flag": "https://flagcdn.com/hu.svg",
+    "name": "Hungarian Forint",
+    "currency": "HUF",
+    "symbol": "Ft"
+  },
+  {
+    "flag": "https://flagcdn.com/no.svg",
+    "name": "Norwegian Krone",
+    "currency": "NOK",
+    "symbol": "kr"
+  },
+  {
+    "flag": "https://flagcdn.com/pl.svg",
+    "name": "Polish Zloty",
+    "currency": "PLN",
+    "symbol": "zł"
+  },
+  {
+    "flag": "https://flagcdn.com/ro.svg",
+    "name": "Romanian Leu",
+    "currency": "RON",
+    "symbol": "lei"
+  },
+  {
+    "flag": "https://flagcdn.com/se.svg",
+    "name": "Swedish Krone",
+    "currency": "SEK",
+    "symbol": "kr"
+  },
+  {
+    "flag": "https://flagcdn.com/ch.svg",
+    "name": "Swiss Franc",
+    "currency": "CHF",
+    "symbol": "Fr."
+  },
+  {
+    "flag": "https://flagcdn.com/gb.svg",
+    "name": "British Pounds",
+    "currency": "GBP",
+    "symbol": "£"
+  },
+  {
+    "flag": "https://flagcdn.com/au.svg",
+    "name": "Australian Dollar",
+    "currency": "AUD",
+    "symbol": "$"
+  },
+  {
+    "flag": "https://flagcdn.com/us.svg",
+    "name": "US Dollar",
+    "currency": "USD",
+    "symbol": "$"
+  }
+]

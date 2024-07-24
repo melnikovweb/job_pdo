@@ -1,0 +1,100 @@
+@layer shared.parts.about-us-section {
+  .about-us-section {
+    --template-action-columns: 1fr;
+    --information-offset-span: 0;
+    --actions-offset-top: 16px;
+    --information-gap: 32px;
+    --text-offset-column: calc(var(--information-offset-span) + 1) / calc((var(--information-offset-span) + 1) * -1);
+    --preview-radius: 16px;
+
+    display: grid;
+    gap: 32px;
+
+    padding-block: 32px;
+
+    &__information {
+      display: grid;
+      gap: var(--information-gap);
+    }
+
+    &__title {
+      grid-column: var(--text-offset-column);
+
+      color: var(--general-black);
+
+      font: var(--headline-h1);
+      text-align: center;
+      text-wrap: pretty;
+    }
+
+    &__description {
+      grid-column: var(--text-offset-column);
+
+      color: var(--typography-default);
+
+      font: var(--body-b1);
+      text-align: center;
+      text-wrap: pretty;
+    }
+
+    &__title + &__description {
+      margin-top: 16px;
+    }
+
+    &__actions {
+      display: grid;
+      justify-content: center;
+      gap: 16px;
+      grid-template-columns: var(--template-action-columns);
+
+      width: 100%;
+
+      overflow: hidden;
+      justify-items: center;
+    }
+
+    * + &__actions {
+      margin-top: var(--actions-offset-top);
+    }
+
+    &__preview img {
+      width: 100%;
+      height: auto;
+      max-height: 636px;
+      object-fit: cover;
+
+      border-radius: var(--preview-radius);
+    }
+
+    &__button {
+      width: 100%;
+    }
+
+    @media only screen and (min-width: 768px) {
+      --actions-offset-top: 32px;
+      --information-gap: 40px;
+      --preview-radius: 24px;
+
+      gap: 48px;
+
+      padding-block: 48px;
+    }
+
+    @media only screen and (min-width: 1024px) {
+      --template-action-columns: repeat(auto-fit, 315px);
+      --information-offset-span: 1;
+
+      gap: 96px;
+
+      padding-block: 96px;
+    }
+
+    @media only screen and (min-width: 1280px) {
+      --information-offset-span: 2;
+    }
+
+    @media only screen and (min-width: 1440px) {
+      --information-offset-span: 3;
+    }
+  }
+}

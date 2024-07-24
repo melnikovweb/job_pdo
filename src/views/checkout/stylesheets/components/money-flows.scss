@@ -1,0 +1,159 @@
+.money-flows {
+  --money-flows-group-columns: 2;
+  --money-flows-group-column-gap: 20px;
+  --money-flows-group-row-gap: 24px;
+  --money-flows-header-span: 4;
+  --money-flows-groups-span: 4;
+
+  align-items: start;
+  row-gap: 32px;
+
+  padding-block: 32px;
+
+  &__header {
+    display: grid;
+    grid-column: span var(--money-flows-header-span);
+    gap: 16px;
+
+    padding-left: 16px;
+
+    border-left: 2px solid var(--typography-white);
+  }
+
+  &__groups {
+    display: grid;
+    grid-column: span var(--money-flows-groups-span) / -1;
+    gap: var(--money-flows-group-row-gap) var(--money-flows-group-column-gap);
+    grid-template-columns: repeat(var(--money-flows-group-columns), 1fr);
+  }
+
+  &__footnote {
+    display: flex;
+    grid-column: span 2;
+  }
+
+  &__footnote-description {
+    display: flex;
+    flex-direction: column;
+
+    color: var(--scale-white-80);
+
+    font: var(--body-b3);
+  }
+
+  &__title {
+    color: var(--typography-white);
+
+    font: var(--headline-h2);
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+
+    color: var(--scale-white-80);
+
+    font: var(--body-b2);
+  }
+
+  &__group {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    grid-column: span 2;
+    gap: 16px;
+
+    padding-top: 16px;
+
+    &::before {
+      content: '';
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 100px;
+      height: 3px;
+
+      background-color: var(--general-lime);
+    }
+  }
+
+  &__name {
+    color: var(--typography-white);
+
+    font: var(--title-t2);
+  }
+
+  &__caption {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    color: var(--scale-white-80);
+
+    font: var(--body-b2);
+  }
+
+  @media only screen and (min-width: 768px) {
+    --money-flows-group-columns: 4;
+    --money-flows-group-row-gap: 60px;
+    --money-flows-header-span: 8;
+    --money-flows-groups-span: 8;
+
+    row-gap: 48px;
+
+    padding-block: 48px;
+
+    &__header {
+      gap: 24px;
+
+      padding-left: 32px;
+    }
+
+    &__footnote {
+      grid-column: span 5;
+    }
+
+    &__description,
+    &__footnote-description {
+      gap: 8px;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    --money-flows-group-columns: 4;
+    --money-flows-group-row-gap: 60px;
+    --money-flows-group-column-gap: 40px;
+    --money-flows-header-span: 12;
+    --money-flows-groups-span: 12;
+
+    row-gap: 80px;
+
+    padding-block: 96px;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    --money-flows-group-column-gap: 80px;
+    --money-flows-header-span: 4;
+    --money-flows-groups-span: 7;
+
+    row-gap: 48px;
+
+    padding-block: 120px;
+  }
+}
+
+.sub-money-flows {
+  --money-flows-group-columns: 2;
+  --money-flows-group-column-gap: 20px;
+  --money-flows-group-row-gap: 24px;
+  --money-flows-header-span: 4;
+  --money-flows-groups-span: 4;
+
+  align-items: start;
+  row-gap: 32px;
+
+  padding-block: 32px;
+}

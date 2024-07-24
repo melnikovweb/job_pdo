@@ -1,0 +1,73 @@
+@use 'src/shared/stylesheets/mixins/state';
+
+.hm-navigation-items {
+  $self: &;
+
+  @include state.css(menu-items-gap, 32px);
+
+  display: flex;
+  gap: var(--_menu-items-gap);
+
+  height: 100%;
+
+  &__item {
+    position: relative;
+
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 8px;
+
+    color: var(--primary-text-color);
+
+    font: var(--body-b1);
+
+    cursor: pointer;
+
+    transition: all 300ms;
+
+    &::before {
+      color: var(--accent-color);
+
+      font-size: 24px;
+    }
+
+    &::after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+
+      width: 50%;
+      height: 2px;
+
+      background-color: var(--accent-color);
+      opacity: 0;
+
+      transition: all 300ms;
+    }
+
+    &:where([data-style='primary'] *) {
+      padding-bottom: 8px;
+
+      color: var(--secondary-text-color);
+
+      &::after {
+        content: '';
+      }
+
+      @media (hover) {
+        &:hover {
+          color: var(--primary-text-color);
+        }
+      }
+    }
+
+    &.active {
+      color: var(--primary-text-color);
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}

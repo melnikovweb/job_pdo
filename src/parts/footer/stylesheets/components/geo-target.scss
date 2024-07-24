@@ -1,0 +1,36 @@
+.ft-geo-target {
+  --item-space-blcok: 32px;
+
+  overflow: hidden;
+
+  &__container {
+    display: grid;
+    gap: 1px;
+    grid-template-columns: 1fr;
+
+    margin: calc(var(--item-space-blcok) * -1);
+  }
+
+  &__section {
+    padding: var(--item-space-blcok);
+
+    outline: 1px solid #45494d; /* --scale-white-20 */
+  }
+
+  &__content {
+    display: grid;
+    gap: 16px;
+
+    color: var(--scale-white-30);
+
+    font: var(--body-b3);
+  }
+
+  @media only screen and (min-width: 1024px) {
+    &__container {
+      display: grid;
+      gap: 1px;
+      grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+    }
+  }
+}

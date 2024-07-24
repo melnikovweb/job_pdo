@@ -1,0 +1,95 @@
+.au-teams-section {
+  --title-columns-space: 0;
+  --description-columns-space: 0;
+  --actions-template: 1fr;
+  --content-row-gap: 24px;
+  --initial-card-columns: 0;
+  --card-columns: 4;
+
+  display: grid;
+  row-gap: 24px;
+
+  padding-block: 32px;
+
+  &__header {
+    display: grid;
+    gap: 16px;
+  }
+
+  &__content {
+    row-gap: var(--content-row-gap);
+  }
+
+  &__actions {
+    display: grid;
+    gap: 16px var(--container-gutter);
+    grid-template-columns: var(--actions-template);
+  }
+
+  &__title,
+  &__description {
+    --au-teams-section-space: calc(var(--au-teams-section-columns-space) + 1);
+
+    grid-column: 1 / calc(var(--au-teams-section-space) * -1);
+  }
+
+  &__title {
+    --au-teams-section-columns-space: var(--title-columns-space);
+
+    color: var(--typography-default);
+
+    font: var(--headline-h2);
+  }
+
+  &__description {
+    --au-teams-section-columns-space: var(--description-columns-space);
+
+    color: var(--typography-secondary);
+
+    font: var(--body-b1);
+  }
+
+  &__card {
+    grid-column: span var(--card-columns);
+
+    &:first-child {
+      grid-column: calc(var(--initial-card-columns) + 1) / span var(--card-columns);
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    --card-columns: 4;
+    --content-row-gap: 56px;
+
+    row-gap: 32px;
+
+    padding-block: 48px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    --initial-card-columns: 6;
+    --card-columns: 6;
+    --actions-template: repeat(auto-fit, 315px);
+
+    row-gap: 56px;
+
+    padding-block: 96px;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    --initial-card-columns: 4;
+    --card-columns: 4;
+    --title-columns-space: 4;
+    --description-columns-space: 2;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    --title-columns-space: 5;
+    --description-columns-space: 3;
+  }
+
+  @media only screen and (min-width: 1920px) {
+    --title-columns-space: 6;
+    --description-columns-space: 4;
+  }
+}

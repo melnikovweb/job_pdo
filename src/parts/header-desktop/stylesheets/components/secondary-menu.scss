@@ -1,0 +1,42 @@
+.hd-secondary-menu {
+  display: flex;
+  gap: 32px;
+
+  &__navigation {
+    display: none;
+  }
+
+  &__buttons {
+    display: none;
+    align-items: center;
+    gap: 18px;
+  }
+
+  &__button {
+    min-width: 102px;
+    padding-inline: 24px;
+  }
+
+  &__burger-button {
+    all: unset;
+
+    display: block;
+
+    color: var(--primary-text-color);
+
+    font-size: 24px;
+
+    cursor: pointer;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    &__burger-button {
+      display: none;
+    }
+
+    &__navigation,
+    &__buttons {
+      display: flex;
+    }
+  }
+}

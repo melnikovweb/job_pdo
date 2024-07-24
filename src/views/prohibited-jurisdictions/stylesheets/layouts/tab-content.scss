@@ -1,0 +1,67 @@
+.pj-tab-content {
+  --search-columns-space: 0;
+  --search-filter-gap: 8px;
+  --search-filter-padding-block: 4px;
+  --content-row-gap: 24px;
+  --caption-row-gap: 8px;
+
+  display: grid;
+  gap: var(--content-row-gap);
+
+  padding-top: 32px;
+
+  &__caption {
+    display: grid;
+    row-gap: var(--caption-row-gap);
+
+    color: var(--scale-white-80);
+
+    font: var(--body-b1);
+  }
+
+  &__filter {
+    --columns-space: calc(var(--search-columns-space) + 1);
+
+    display: grid;
+    grid-column: 1 / calc(var(--columns-space) * -1);
+    gap: var(--search-filter-gap);
+
+    padding-block: var(--search-filter-padding-block);
+
+    color: var(--typography-white);
+
+    &::after {
+      content: '';
+
+      width: 100%;
+      height: 1px;
+
+      background-color: var(--scale-white-40);
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    --search-filter-gap: 16px;
+    --search-filter-padding-block: 20px;
+    --content-row-gap: 48px;
+    --caption-row-gap: 24px;
+
+    padding-top: 48px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    --content-row-gap: 80px;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    --search-columns-space: 3;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    --search-columns-space: 4;
+  }
+
+  @media only screen and (min-width: 1920px) {
+    --search-columns-space: 6;
+  }
+}

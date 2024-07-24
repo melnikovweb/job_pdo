@@ -1,0 +1,141 @@
+.all-payment-methods-vertical {
+  --title-color: var(--typography-white);
+  --description-color: var(--scale-white-80);
+  --ticker-column-gap: 16px;
+  --ticker-duration: 80000ms;
+  --preview-width: 66px;
+  --preview-height: 56px;
+  --preview-radius: 8px;
+  --preview-pading: 14px 8px;
+  --previews-offset: 32px;
+  --header-column-space: 0;
+  --content-column-space: 0;
+
+  row-gap: 24px;
+
+  height: 244px;
+  margin: auto;
+
+  overflow: hidden;
+
+  &__previews {
+    --columns-offset: calc(var(--content-column-space) + 1);
+
+    display: flex;
+    justify-content: center;
+    grid-column: var(--columns-offset) / calc(var(--columns-offset) * -1);
+    gap: var(--ticker-column-gap);
+  }
+
+  &__ticker-row {
+    border-radius: var(--preview-radius);
+
+    &:last-child {
+      display: none;
+    }
+  }
+
+  &__preview {
+    width: var(--preview-width);
+    height: var(--preview-height);
+    padding: var(--preview-pading);
+
+    border-radius: var(--preview-radius);
+
+    overflow: hidden;
+
+    background-color: #f2f5ff;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    --preview-width: 118px;
+    --preview-height: 100px;
+    --preview-redius: 16px;
+    --preview-pading: 16px;
+    --previews-offset: 64px;
+
+    row-gap: 48px;
+
+    height: 576px;
+
+    &__ticker-row:last-child {
+      display: flex;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    --ticker-column-gap: 24px;
+    --previews-offset: 52px;
+
+    row-gap: 80px;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    --ticker-column-gap: 30px;
+    --header-column-space: 1;
+    --previews-offset: 48px;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    --header-column-space: 2;
+    --previews-offset: 30px;
+  }
+
+  @media only screen and (min-width: 1920px) {
+    --header-column-space: 3;
+    --content-column-space: 1;
+  }
+}
+
+.ticker-row-vertical {
+  --ticker-column-gap-vertical: var(--ticker-column-gap, 40px);
+  --ticker-duration-vertical: var(--ticker-duration, 3000ms);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--ticker-column-gap-vertical);
+
+  overflow: hidden;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    align-items: center;
+    gap: var(--ticker-column-gap-vertical);
+
+    min-width: 100%;
+
+    animation: ticker-row-vertical-animation var(--ticker-duration-vertical) linear infinite;
+
+    &:where(.ticker-row-vertical.reverse *) {
+      animation: ticker-row-vertical-reverse-animation var(--ticker-duration-vertical) linear infinite;
+    }
+  }
+}
+
+@keyframes ticker-row-vertical-animation {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(calc(-100% - var(--ticker-column-gap-vertical)));
+  }
+}
+
+@keyframes ticker-row-vertical-reverse-animation {
+  0% {
+    transform: translateY(calc(-100% - var(--ticker-column-gap-vertical)));
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,127 @@
+.du-table-content {
+  --min-th-height: 100px;
+  --min-td-height: 60px;
+  --dot-threshold: 8px;
+  --min-column-width: 220px;
+  --th-padding-block: 32px;
+  --td-padding: 16px;
+
+  margin-bottom: -8px;
+  padding-bottom: 8px;
+
+  overflow-x: auto;
+
+  color: var(--typography-white);
+
+  &::-webkit-scrollbar {
+    height: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 4px;
+
+    background-color: var(--typography-secondary);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+
+    background-color: var(--general-lime);
+  }
+
+  :where(ul, ol) {
+    display: grid;
+
+    list-style: none;
+
+    counter-reset: stepper;
+  }
+
+  li {
+    display: flex;
+    gap: 0.36em;
+
+    counter-increment: stepper;
+  }
+
+  ul li::before {
+    content: '\e901';
+
+    flex-shrink: 0;
+
+    padding-top: var(--dot-threshold);
+
+    color: currentcolor;
+
+    font-family: 'SECRET-landing', sans-serif;
+    font-size: 4px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 1;
+    text-transform: none;
+
+    speak: never;
+  }
+
+  table {
+    --columns-count: 4;
+
+    min-width: calc(var(--min-column-width) * var(--columns-count));
+
+    background-color: var(--additional-dark);
+  }
+
+  :where(td, th) {
+    outline: 1px solid var(--scale-white-40);
+  }
+
+  td {
+    width: 232px;
+    min-height: var(--min-td-height);
+    padding: var(--td-padding);
+
+    color: var(--scale-white-80);
+
+    font: var(--body-b1);
+  }
+
+  th {
+    min-height: var(--min-th-height);
+    padding-inline: 16px;
+    padding-block: var(--th-padding-block);
+
+    font: var(--title-t3);
+
+    &[data-style='lightblue'] {
+      color: var(--general-black);
+      background-color: var(--additional-blue-15);
+
+      font: var(--title-t2);
+    }
+
+    &[data-style='blue'] {
+      background-color: var(--general-blue);
+    }
+  }
+
+  thead th {
+    font: var(--title-t2);
+  }
+
+  @media only screen and (min-width: 768px) {
+    --dot-threshold: 12px;
+    --min-td-height: 80px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    --min-td-height: 100px;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    --min-th-height: 140px;
+    --td-padding: 32px;
+  }
+}

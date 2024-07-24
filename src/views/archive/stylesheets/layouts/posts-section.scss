@@ -1,0 +1,26 @@
+.posts-section {
+  display: grid;
+  gap: 24px;
+
+  padding-block-end: 24px;
+
+  @media only screen and (min-width: 360px) {
+    padding-block-end: 40px;
+  }
+
+  @media only screen and (min-width: 414px) {
+    gap: 40px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    gap: 56px;
+
+    padding-block-end: 56px;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    gap: 96px;
+
+    padding-block-end: 96px;
+  }
+}

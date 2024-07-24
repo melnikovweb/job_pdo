@@ -1,0 +1,44 @@
+.video-guide-section {
+  --group-columns: 2;
+
+  display: grid;
+  gap: 32px;
+
+  padding-block: 32px;
+
+  &__header {
+    --title-color: var(--clr-blue);
+    --description-color: var(--typography-default);
+    --description-m-width: 540px;
+  }
+
+  &__media {
+    width: 100%;
+    max-width: 1096px;
+    margin-inline: auto;
+
+    iframe {
+      aspect-ratio: 6 / 3;
+      width: 100%;
+      height: auto;
+      max-height: clamp(162px, 42vw, 786px);
+    }
+
+    img {
+      object-fit: contain;
+
+      width: 100%;
+      max-height: clamp(162px, 42vw, 786px);
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    padding-block: 48px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    gap: 60px;
+
+    padding-block: 96px;
+  }
+}

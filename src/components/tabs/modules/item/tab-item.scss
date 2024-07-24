@@ -1,0 +1,23 @@
+:host {
+  display: block;
+
+  pointer-events: none;
+}
+
+.tab-item {
+  pointer-events: auto;
+
+  &.active {
+    transition: all 600ms;
+  }
+
+  &:not(.active) {
+    position: absolute;
+
+    visibility: hidden;
+
+    opacity: 0;
+    appearance: none;
+    inset: 0;
+  }
+}

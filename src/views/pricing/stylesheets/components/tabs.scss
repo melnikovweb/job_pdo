@@ -1,0 +1,21 @@
+.pp-tabs {
+  --filters-column: 1 / -1;
+  --content-padding-block: 32px;
+
+  &__filters {
+    grid-column: var(--filters-column);
+  }
+
+  &__content {
+    padding-block: var(--content-padding-block);
+  }
+
+  @media only screen and (min-width: 768px) {
+    --content-padding-block: 48px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    --filters-column: span 6;
+    --content-padding-block: 56px;
+  }
+}

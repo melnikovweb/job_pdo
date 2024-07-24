@@ -1,0 +1,22 @@
+.supported-countries {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+
+  white-space: normal;
+
+  &__section {
+    color: var(--scale-white-80);
+
+    font: var(--body-b1);
+
+    &::before {
+      content: attr(data-region) ':';
+
+      padding-inline-end: 0.36em;
+
+      font: var(--title-t3);
+    }
+  }
+}

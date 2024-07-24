@@ -1,0 +1,56 @@
+.ticker-row {
+  --_ticker-column-gap: var(--ticker-column-gap, 8px);
+  --_ticker-duration: var(--ticker-duration, 3000ms);
+  display: flex;
+  overflow: hidden;
+  gap: var(--_ticker-column-gap);
+}
+
+.ticker-row__wrapper {
+  display: flex;
+  min-width: 100%;
+  align-items: center;
+  gap: var(--_ticker-column-gap);
+  flex-shrink: 0;
+  animation: ticker-row-animation var(--_ticker-duration) linear infinite;
+}
+
+.ticker-row__wrapper:where(.ticker-row.reverse *) {
+  animation:
+    ticker-row-reverse-animation var(--_ticker-duration) linear
+    infinite;
+}
+
+@keyframes ticker-row-animation {
+
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-100% - var(--_ticker-column-gap)));
+  }
+}
+
+@keyframes ticker-row-reverse-animation {
+
+  0% {
+    transform: translateX(calc(-100% - var(--_ticker-column-gap)));
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .ticker-row {
+    --_ticker-column-gap: var(--ticker-column-gap, 24px);
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .ticker-row {
+    --_ticker-column-gap: var(--ticker-column-gap, 40px);
+  }
+}

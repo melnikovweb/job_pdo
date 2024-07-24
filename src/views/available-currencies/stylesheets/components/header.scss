@@ -1,0 +1,33 @@
+.av-header {
+  --padding-block: 32px;
+
+  gap: 16px;
+
+  padding-block: var(--padding-block);
+
+  &__title {
+    color: var(--typography-white);
+
+    font: var(--headline-h1);
+    text-align: center;
+  }
+
+  &__text {
+    color: var(--scale-white-80);
+
+    font: var(--body-b1);
+    text-align: center;
+  }
+
+  @media only screen and (min-width: 768px) {
+    --padding-block: 48px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    --padding-block: 80px;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    --padding-block: 96px;
+  }
+}

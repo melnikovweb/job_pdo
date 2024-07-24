@@ -1,0 +1,57 @@
+@use 'src/shared/stylesheets/mixins/state';
+
+.hd-navigation-dropdown {
+  display: grid;
+  gap: 8px;
+
+  padding-bottom: 16px;
+
+  border-radius: 8px;
+
+  background-color: var(--_dropdown-background);
+
+  &:where([data-header-theme='black'] *) {
+    @include state.css(dropdown-background, var(--general-black));
+    @include state.css(dropdown-item-fill-hover, var(--general-blue));
+    @include state.css(dropdown-color, var(--scale-white-80));
+    @include state.css(dropdown-item-color-hover, var(--scale-white-80));
+  }
+
+  &:where([data-header-theme='dark'] *) {
+    @include state.css(dropdown-background, var(--additional-dark));
+    @include state.css(dropdown-item-fill-hover, var(--general-blue));
+    @include state.css(dropdown-color, var(--scale-white-80));
+    @include state.css(dropdown-item-color-hover, var(--scale-white-80));
+  }
+
+  &:where([data-header-theme='white'] *) {
+    @include state.css(dropdown-background, var(--typography-white));
+    @include state.css(dropdown-color, var(--typography-secondary));
+    @include state.css(dropdown-item-fill-hover, var(--general-blue));
+    @include state.css(dropdown-item-color-hover, var(--general-white));
+  }
+
+  &:where([data-header-theme='blue'] *) {
+    @include state.css(dropdown-background, var(--general-blue));
+    @include state.css(dropdown-color, var(--scale-white-80));
+    @include state.css(dropdown-item-fill-hover, var(--general-white));
+    @include state.css(dropdown-item-color-hover, var(--typography-default));
+  }
+
+  &__item {
+    min-width: 245px;
+    padding-inline: 16px;
+    padding-block: 5px;
+
+    color: var(--_dropdown-color);
+
+    white-space: nowrap;
+
+    transition: all 300ms;
+
+    &:hover {
+      color: var(--_dropdown-item-color-hover);
+      background-color: var(--_dropdown-item-fill-hover);
+    }
+  }
+}

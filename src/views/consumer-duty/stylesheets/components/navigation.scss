@@ -1,0 +1,95 @@
+@use 'src/shared/stylesheets/mixins/regular-content';
+
+.du-navigation {
+  --dot-threshold: 6px;
+  --items-gap: 16px;
+  --sub-items-gap: 8px;
+  --sub-items-offset: 8px;
+
+  @include regular-content.set;
+
+  display: grid;
+  gap: var(--items-gap);
+
+  padding-bottom: 32px;
+
+  &__title {
+    border-bottom: 1px solid var(--general-lime);
+
+    color: var(--typography-white);
+
+    font: var(--headline-h3);
+  }
+
+  &__items {
+    display: grid;
+    gap: var(--items-gap);
+  }
+
+  &__item {
+    display: grid;
+    gap: var(--sub-items-offset);
+
+    padding-bottom: 16px;
+
+    border-bottom: 1px solid var(--scale-white-30);
+
+    color: var(--typography-white);
+
+    font: var(--title-t2);
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 16px;
+
+    &:active {
+      color: var(--general-lime);
+    }
+  }
+
+  &__sub-item {
+    margin-bottom: 16px;
+
+    a {
+      width: 100%;
+
+      color: var(--scale-white-80);
+
+      transition: all 300ms;
+    }
+  }
+
+  @media (hover) {
+    &__link:hover {
+      color: var(--general-lime);
+    }
+
+    &__sub-item a:hover {
+      color: var(--general-lime);
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    --dot-threshold: 7px;
+    --items-gap: 32px;
+    --sub-items-offset: 24px;
+    --sub-items-gap: 16px;
+
+    padding-bottom: 56px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    padding-bottom: 80px;
+  }
+
+  @media only screen and (min-width: 1025px) {
+    --dot-threshold: 9px;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    padding-bottom: 96px;
+  }
+}

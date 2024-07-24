@@ -1,0 +1,21 @@
+.career-banner {
+  padding-block: 32px;
+
+  background-color: var(--general-blue);
+
+  &__title {
+    max-width: 650px;
+
+    color: var(--typography-white);
+
+    font: var(--headline-h1);
+  }
+
+  @media only screen and (min-width: 768px) {
+    padding-block: 48px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    padding-block: 96px;
+  }
+}

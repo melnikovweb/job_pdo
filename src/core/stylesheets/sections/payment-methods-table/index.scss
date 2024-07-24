@@ -1,0 +1,32 @@
+@use 'overrides';
+
+.payment-methods-table {
+  --section-block-space: 32px;
+  --section-gap: 24px;
+  --cell-space: 8px;
+  --pagination-button-size: 24px;
+
+  @include overrides.data-table;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap);
+
+  padding-block: var(--section-block-space);
+
+  color: var(--typography-white);
+
+  @media only screen and (min-width: 768px) {
+    --section-block-space: 48px;
+    --cell-space: 24px 8px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    --section-block-space: 80px;
+    --section-gap: 56px;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    --pagination-button-size: 32px;
+  }
+}

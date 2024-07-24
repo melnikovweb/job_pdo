@@ -1,0 +1,10 @@
+.base-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 120;
+
+  display: grid;
+  grid-auto-rows: auto;
+  grid-template-columns: 1fr;
+}

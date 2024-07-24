@@ -1,0 +1,68 @@
+@layer shared.parts.integration-component {
+  .integration-component {
+    &__content {
+      display: grid;
+      row-gap: var(--content-gap);
+    }
+
+    &__group {
+      display: flex;
+      flex-direction: column;
+      gap: var(--group-gap);
+    }
+
+    &__name {
+      color: var(--title-color);
+
+      font: var(--headline-h4);
+    }
+
+    &__text {
+      display: grid;
+      align-content: start;
+      gap: 8px;
+
+      color: var(--text-color);
+
+      font: var(--body-b2);
+    }
+
+    &__links {
+      display: flex;
+      flex-direction: column;
+      row-gap: 4px;
+    }
+
+    &__link {
+      display: inline-flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      align-self: flex-start;
+      justify-content: flex-end;
+      gap: 0.36em;
+
+      color: var(--link-color);
+
+      font: var(--button-font);
+
+      &::before {
+        font-size: 22px;
+      }
+    }
+
+    @media only screen and (min-width: 360px) {
+      &__link {
+        height: 48px;
+        padding-inline: 16px;
+
+        border-radius: 8px;
+
+        transition: var(--def-transition);
+
+        &:hover {
+          background: var(--scale-white-5);
+        }
+      }
+    }
+  }
+}

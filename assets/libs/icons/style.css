@@ -1,0 +1,375 @@
+@font-face {
+  font-family: 'SECRET-landing';
+  font-style: normal;
+  font-weight: 400;
+  src:
+    url('fonts/SECRET-landing.ttf?8blg3s') format('truetype'),
+    url('fonts/SECRET-landing.woff?8blg3s') format('woff'),
+    url('fonts/SECRET-landing.svg?8blg3s#SECRET-landing') format('svg');
+  font-display: block;
+}
+
+[class^='icon-']::before,
+[class*=' icon-']::before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'SECRET-landing' !important;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: none;
+
+  speak: never;
+}
+
+.icon-instagram::before {
+  content: '\e914';
+}
+
+.icon-twitter::before {
+  content: '\e902';
+}
+
+.icon-facebook::before {
+  content: '\e903';
+}
+
+.icon-linkedin::before {
+  content: '\e904';
+}
+
+.icon-mail::before {
+  content: '\e905';
+}
+
+.icon-bitcoin::before {
+  content: '\e906';
+}
+
+.icon-esports::before {
+  content: '\e908';
+}
+
+.icon-games-of-chance::before {
+  content: '\e909';
+}
+
+.icon-gift-activation-cards::before {
+  content: '\e90a';
+}
+
+.icon-logistics::before {
+  content: '\e90b';
+}
+
+.icon-manufacturing::before {
+  content: '\e90c';
+}
+
+.icon-pain-poins::before {
+  content: '\e90d';
+}
+
+.icon-payment-gateways-1::before {
+  content: '\e90e';
+}
+
+.icon-payment-gateways::before {
+  content: '\e90f';
+}
+
+.icon-payment-services-Providers::before {
+  content: '\e910';
+}
+
+.icon-skill-games::before {
+  content: '\e911';
+}
+
+.icon-construction::before {
+  content: '\e912';
+}
+
+.icon-solution::before {
+  content: '\e913';
+}
+
+.icon-up-big::before {
+  content: '\e907';
+}
+
+.icon-down-big::before {
+  content: '\e91c';
+}
+
+.icon-map-2::before {
+  content: '\e947';
+}
+
+.icon-advertising::before {
+  content: '\e948';
+}
+
+.icon-affiliate::before {
+  content: '\e949';
+}
+
+.icon-api-2::before {
+  content: '\e94a';
+}
+
+.icon-api::before {
+  content: '\e94b';
+}
+
+.icon-bank-3::before {
+  content: '\e94c';
+}
+
+.icon-book::before {
+  content: '\e94d';
+}
+
+.icon-brain-2::before {
+  content: '\e94e';
+}
+
+.icon-brain-3::before {
+  content: '\e94f';
+}
+
+.icon-brain::before {
+  content: '\e950';
+}
+
+.icon-card-1::before {
+  content: '\e951';
+}
+
+.icon-card-2::before {
+  content: '\e952';
+}
+
+.icon-chart::before {
+  content: '\e953';
+}
+
+.icon-check-circle::before {
+  content: '\e954';
+}
+
+.icon-clock-backward::before {
+  content: '\e955';
+}
+
+.icon-clock-check::before {
+  content: '\e956';
+}
+
+.icon-computer-pay::before {
+  content: '\e957';
+}
+
+.icon-computer-cursor::before {
+  content: '\e958';
+}
+
+.icon-computer::before {
+  content: '\e959';
+}
+
+.icon-crypto::before {
+  content: '\e95a';
+}
+
+.icon-desktop-code::before {
+  content: '\e95b';
+}
+
+.icon-exchange::before {
+  content: '\e95c';
+}
+
+.icon-games-1::before {
+  content: '\e95d';
+}
+
+.icon-games-2::before {
+  content: '\e95e';
+}
+
+.icon-gear::before {
+  content: '\e95f';
+}
+
+.icon-globe-2::before {
+  content: '\e960';
+}
+
+.icon-globe-4::before {
+  content: '\e961';
+}
+
+.icon-globe::before {
+  content: '\e962';
+}
+
+.icon-hand::before {
+  content: '\e963';
+}
+
+.icon-import-and-export::before {
+  content: '\e964';
+}
+
+.icon-legal::before {
+  content: '\e965';
+}
+
+.icon-line-down::before {
+  content: '\e966';
+}
+
+.icon-line-up::before {
+  content: '\e967';
+}
+
+.icon-number-1::before {
+  content: '\e968';
+}
+
+.icon-partner::before {
+  content: '\e969';
+}
+
+.icon-pie-chart::before {
+  content: '\e96a';
+}
+
+.icon-play-card::before {
+  content: '\e96b';
+}
+
+.icon-sales::before {
+  content: '\e96c';
+}
+
+.icon-shield-card::before {
+  content: '\e96d';
+}
+
+.icon-shield-check::before {
+  content: '\e96e';
+}
+
+.icon-speaker::before {
+  content: '\e96f';
+}
+
+.icon-support::before {
+  content: '\e970';
+}
+
+.icon-users-profiles-1::before {
+  content: '\e971';
+}
+
+.icon-users-profiles-2::before {
+  content: '\e972';
+}
+
+.icon-users-profiles-3::before {
+  content: '\e973';
+}
+
+.icon-wrenchnum::before {
+  content: '\e974';
+}
+
+.icon-dot-separator_sm::before {
+  content: '\e900';
+}
+
+.icon-dot-separator::before {
+  content: '\e901';
+}
+
+.icon-search::before {
+  content: '\e930';
+}
+
+.icon-filter::before {
+  content: '\e932';
+}
+
+.icon-minus::before {
+  content: '\e933';
+}
+
+.icon-close::before {
+  content: '\e934';
+}
+
+.icon-plus::before {
+  content: '\e935';
+}
+
+.icon-check::before {
+  content: '\e936';
+}
+
+.icon-list::before {
+  content: '\e937';
+}
+
+.icon-chevron-up::before {
+  content: '\e938';
+}
+
+.icon-chevron-down::before {
+  content: '\e939';
+}
+
+.icon-chevron-left::before {
+  content: '\e93a';
+}
+
+.icon-chevron-right::before {
+  content: '\e93b';
+}
+
+.icon-Arrow-left-up::before {
+  content: '\e93c';
+}
+
+.icon-arrow-left-down::before {
+  content: '\e93d';
+}
+
+.icon-arrow-right-up::before {
+  content: '\e93e';
+}
+
+.icon-arrow-right-down::before {
+  content: '\e93f';
+}
+
+.icon-arrow-right::before {
+  content: '\e940';
+}
+
+.icon-arrow-up::before {
+  content: '\e941';
+}
+
+.icon-arrow-down::before {
+  content: '\e942';
+}
+
+.icon-arrow-left::before {
+  content: '\e943';
+}

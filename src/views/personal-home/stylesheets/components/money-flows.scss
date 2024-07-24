@@ -1,0 +1,122 @@
+.hp-money-flows {
+  --hp-money-flows-group-columns: 2;
+  --hp-money-flows-group-column-gap: 20px;
+  --hp-money-flows-group-row-gap: 24px;
+  --hp-money-flows-header-span: 4;
+  --hp-money-flows-groups-span: 4;
+
+  align-items: start;
+  row-gap: 32px;
+
+  padding-block: 32px;
+
+  &__header {
+    display: grid;
+    grid-column: span var(--hp-money-flows-header-span);
+    gap: 16px;
+
+    padding-left: 16px;
+
+    border-left: 2px solid var(--typography-white);
+  }
+
+  &__groups {
+    display: grid;
+    grid-column: span var(--hp-money-flows-groups-span) / -1;
+    gap: var(--hp-money-flows-group-row-gap) var(--hp-money-flows-group-column-gap);
+    grid-template-columns: repeat(var(--hp-money-flows-group-columns), 1fr);
+  }
+
+  &__title {
+    color: var(--typography-white);
+
+    font: var(--headline-h2);
+    text-wrap: pretty;
+  }
+
+  &__description {
+    color: var(--typography-white);
+
+    font: var(--body-b2);
+  }
+
+  &__group {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    grid-column: span 2;
+    gap: 16px;
+
+    padding-top: 16px;
+  }
+
+  &__group::before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 30%;
+    height: 3px;
+
+    background-color: var(--general-lime);
+  }
+
+  &__name {
+    color: var(--typography-white);
+
+    font: var(--title-t2);
+    text-wrap: pretty;
+  }
+
+  &__caption {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    color: var(--typography-white);
+
+    font: var(--body-b2);
+  }
+
+  @media only screen and (min-width: 768px) {
+    --hp-money-flows-group-columns: 4;
+    --hp-money-flows-group-row-gap: 60px;
+    --hp-money-flows-header-span: 8;
+    --hp-money-flows-groups-span: 8;
+
+    row-gap: 48px;
+
+    padding-block: 48px;
+
+    &__header {
+      gap: 24px;
+
+      padding-left: 32px;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    --hp-money-flows-group-columns: 4;
+    --hp-money-flows-group-row-gap: 60px;
+    --hp-money-flows-group-column-gap: 40px;
+    --hp-money-flows-header-span: 12;
+    --hp-money-flows-groups-span: 12;
+
+    row-gap: 80px;
+
+    padding-block: 96px;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    --hp-money-flows-group-column-gap: 80px;
+    --hp-money-flows-header-span: 4;
+    --hp-money-flows-groups-span: 7;
+
+    row-gap: 48px;
+
+    padding-block: 120px;
+  }
+}

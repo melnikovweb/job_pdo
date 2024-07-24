@@ -1,0 +1,11 @@
+.payment-methods-list-filters {
+  --filters-template-headers: var(--filters-icon-size) 1fr;
+
+  @media only screen and (min-width: 1024px) {
+    --filters-template-columns: 1fr repeat(2, 1fr) !important; /* stylelint-disable declaration-no-important */
+  }
+}
+
+.pm-header-section {
+  --title-color: var(--general-lime);
+}

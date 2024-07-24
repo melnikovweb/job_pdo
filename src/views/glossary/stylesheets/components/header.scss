@@ -1,0 +1,35 @@
+.gl-header {
+  &__title {
+    padding-block: 32px;
+
+    color: var(--typography-white);
+
+    font: var(--headline-h1);
+    text-align: center;
+  }
+
+  &__subtitle {
+    margin-block: 24px 30px;
+
+    color: var(--general-lime);
+
+    font: var(--title-t1);
+    text-align: center;
+  }
+
+  @media only screen and (min-width: 768px) {
+    &__title {
+      padding-block: 48px;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    &__title {
+      padding-block: 96px;
+    }
+
+    &__subtitle {
+      margin-top: 48px;
+    }
+  }
+}

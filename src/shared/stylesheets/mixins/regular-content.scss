@@ -1,0 +1,151 @@
+@mixin set() {
+  --dot-size: 24px;
+
+  display: grid;
+  gap: var(--content-gap);
+
+  color: var(--typography-white);
+
+  &:where([data-theme='white'] *) {
+    color: var(--typography-default);
+  }
+
+  :where(h1, h2, h3, h4, h5, h6) {
+    text-decoration: underline;
+    text-underline-position: under;
+
+    text-decoration-color: var(--general-lime);
+    text-decoration-thickness: 2px;
+  }
+
+  :where(h1, h2, h3, h4, h5, h6, .sub-title) + *:not(.sub-title),
+  :where(h1, h2, h3, h4, h5, h6) + .sub-title + *,
+  * + :where(h1, h2, h3, h4, h5, h6) {
+    margin-top: calc(var(--content-headline-gap) - var(--content-gap));
+  }
+
+  :where(strong, b, [class*='title-']) + :where(ol, ul) {
+    margin-top: calc((var(--content-gap) / 2) * -1);
+  }
+
+  :where([class*='title-'], strong, b, .sub-title) {
+    color: var(--typography-white);
+
+    &:where([data-theme='white'] *) {
+      color: var(--typography-default);
+    }
+  }
+
+  :where(strong, b) {
+    font: var(--title-t3);
+  }
+
+  p {
+    color: var(--scale-white-80);
+
+    font: var(--body-b1);
+
+    &:where([data-theme='white'] *) {
+      color: var(--typography-default);
+    }
+  }
+
+  /* stylelint-disable-next-line no-descending-specificity */
+  blockquote,
+  blockquote * {
+    width: 100%;
+
+    color: var(--scale-white-40);
+
+    font: var(--body-b3);
+  }
+
+  *:not(li *) + blockquote {
+    margin-top: calc((var(--content-gap) * -1) + 8px);
+  }
+
+  ul {
+    display: grid;
+    gap: var(--content-list-gap);
+
+    padding-left: 16px;
+
+    list-style: none;
+
+    counter-reset: stepper;
+
+    li {
+      position: relative;
+
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+
+      padding-left: calc(var(--dot-size) + 8px);
+
+      color: var(--scale-white-80);
+
+      font: var(--body-b2);
+
+      counter-increment: stepper;
+
+      &::before {
+        content: '\e901';
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        flex-shrink: 0;
+
+        overflow: hidden;
+
+        color: var(--general-lime);
+
+        font-family: 'SECRET-landing', sans-serif;
+        font-size: var(--dot-size);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: 400;
+        line-height: 1;
+        text-transform: none;
+
+        speak: never;
+      }
+
+      &:where([data-theme='white'] *) {
+        color: var(--typography-default);
+      }
+    }
+  }
+
+  ol {
+    display: grid;
+    gap: var(--content-list-gap);
+
+    padding-left: 20px;
+
+    counter-reset: stepper;
+
+    li {
+      position: relative;
+
+      gap: 16px;
+
+      color: var(--scale-white-80);
+
+      font: var(--body-b2);
+
+      &:where([data-theme='white'] *) {
+        color: var(--typography-default);
+      }
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}

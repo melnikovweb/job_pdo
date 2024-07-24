@@ -1,0 +1,35 @@
+.image-block {
+  --image-gap: 6px;
+  --image-radius: 8px;
+
+  column-gap: var(--image-gap);
+
+  margin-block: calc((var(--image-gap) / 2) * -1);
+
+  column-count: 3;
+
+  &__item {
+    display: flex;
+
+    padding-block: calc(var(--image-gap) / 2);
+
+    border-radius: var(--image-radius);
+
+    img {
+      width: 100%;
+      height: 100%;
+
+      border-radius: var(--image-radius);
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    --image-gap: 12px;
+    --image-radius: 16px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    --image-gap: 20px;
+    --image-radius: 24px;
+  }
+}

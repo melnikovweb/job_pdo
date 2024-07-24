@@ -1,0 +1,52 @@
+@layer shared.parts.faq-section {
+  .faq-section {
+    gap: 32px;
+
+    padding-block: 32px;
+
+    &__title {
+      color: var(--typography-white);
+
+      font: var(--headline-h1);
+
+      &:where([data-theme='white'] *) {
+        color: var(--typography-default);
+      }
+    }
+
+    @media only screen and (min-width: 768px) {
+      padding-block: 56px;
+    }
+
+    @media only screen and (min-width: 1024px) {
+      padding-block: 96px;
+    }
+
+    @media only screen and (min-width: 1280px) {
+      --container-offset-start: 2;
+      --container-offset-end: 2;
+
+      row-gap: 56px;
+
+      &__container {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+
+        &[data-columns='12'] {
+          grid-column: var(--container-offset-start) / span
+            calc(12 - var(--container-offset-start) - var(--container-offset-end));
+        }
+      }
+
+      &__header {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    @media only screen and (min-width: 1920px) {
+      --container-offset-start: 3;
+      --container-offset-end: 3;
+    }
+  }
+}

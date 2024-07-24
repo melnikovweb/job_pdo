@@ -1,0 +1,142 @@
+.ind-cards-section {
+  --banner-block: 32px;
+  --title-color: var(--general-lime);
+  --content-color: var(--scale-white-80);
+
+  display: grid;
+  row-gap: 32px;
+
+  padding-block: var(--banner-block);
+
+  overflow: hidden;
+
+  background: var(--additional-dark);
+}
+
+.card-wrap {
+  display: grid;
+  row-gap: 16px;
+}
+
+.card-header {
+  color: var(--general-lime, #c4ff1c);
+
+  font: var(--headline-h4);
+}
+
+.countries-item {
+  &__content {
+    color: var(--scale-white-80, rgb(255 255 255 / 80%));
+
+    font: var(--body-b2);
+
+    & ol {
+      display: grid;
+      row-gap: 16px;
+
+      list-style-position: inside;
+      list-style-type: decimal-leading-zero;
+    }
+  }
+}
+
+.card-items {
+  display: grid;
+  row-gap: 16px;
+  grid-template-columns: 1fr;
+}
+
+.card-item {
+  --content-title: var(--typography-white);
+  --content: var(--typography-white);
+
+  display: grid;
+  align-content: baseline;
+  row-gap: 20px;
+
+  padding: 8px;
+
+  &__header {
+    display: flex;
+    column-gap: 8px;
+  }
+
+  &__header-text {
+    color: var(--scale-white-90, rgb(255 255 255 / 90%));
+
+    font: var(--title-t2);
+  }
+
+  &__header-icon {
+    display: flex;
+
+    font-size: 16px;
+  }
+
+  &__header-icon a {
+    margin: auto;
+
+    color: var(--general-lime);
+  }
+
+  &.black {
+    --content-title: var(--general-lime);
+
+    border-radius: 8px;
+
+    background: var(--general-black);
+  }
+
+  &.black .countries-item {
+    &__content ol li::marker {
+      color: var(--general-lime, #c4ff1c);
+
+      font: var(--title-t4);
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .ind-cards-section {
+    --banner-block: 48px 56px;
+
+    row-gap: 48px;
+  }
+
+  .card-item {
+    row-gap: 40px;
+
+    padding: 24px;
+
+    &__header {
+      column-gap: 16px;
+    }
+
+    &__header-icon {
+      font-size: 36px;
+    }
+  }
+
+  .countries-item-content ol {
+    row-gap: 32px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .ind-cards-section {
+    --banner-block: 96px 96px;
+
+    row-gap: 80px;
+  }
+
+  .card-items {
+    column-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .ind-cards-section {
+    column-gap: 48px;
+  }
+}

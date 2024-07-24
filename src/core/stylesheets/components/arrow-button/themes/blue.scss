@@ -1,0 +1,20 @@
+@use 'src/shared/stylesheets/mixins/state';
+
+@mixin blue {
+  &[data-style='blue'] {
+    @include state.css(arrow-button-color, var(--additional-dark));
+    @include state.css(arrow-button-background, transparent);
+
+    &:active {
+      @include state.css(arrow-button-color, var(--typography-white));
+      @include state.css(arrow-button-background, var(--general-blue));
+    }
+
+    @media (hover) {
+      &:hover {
+        @include state.css(arrow-button-color, var(--typography-white));
+        @include state.css(arrow-button-background, var(--general-blue));
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+@use 'src/shared/stylesheets/mixins/state';
+
+@mixin core {
+  @include state.css(button-height, 48px);
+  @include state.css(button-color, var(--general-lime));
+  @include state.css(button-background, var(--aditional-dark));
+  @include state.css(button-border, var(--additional-dark));
+  @include state.css(button-color-hover, var(--general-lime));
+  @include state.css(button-background-hover, var(--additional-dark-2));
+  @include state.css(button-border-hover, var(--additional-dark-2));
+  @include state.css(button-color-disabled, var(--scale-white-60));
+  @include state.css(button-color-disabled, var(--typography-secondary));
+  @include state.css(button-border-disabled, var(--typography-secondary));
+
+  box-sizing: border-box;
+
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-auto-flow: column;
+  gap: 16px;
+
+  height: var(--_button-height);
+
+  border: 1px solid;
+  border-radius: 8px;
+  border-color: var(--_button-border);
+
+  color: var(--_button-color);
+  background: var(--_button-background);
+
+  font: var(--button-font);
+
+  cursor: pointer;
+
+  transition: all 300ms;
+
+  &:not([data-icon-reverse])::before {
+    grid-column: 2;
+  }
+
+  &:active {
+    border-color: var(--_button-border-hover);
+
+    color: var(--_button-color-hover);
+    background: var(--_button-background-hover);
+  }
+
+  @at-root {
+    button#{&}:disabled,
+    &[aria-disabled='true'] {
+      border-color: var(--_button-border-disabled);
+
+      color: var(--_button-color-disabled);
+      background: var(--_button-background-disabled);
+
+      cursor: default;
+      pointer-events: none;
+      user-select: none;
+    }
+  }
+
+  @media (hover) {
+    &:where(:hover) {
+      border-color: var(--_button-border-hover);
+
+      color: var(--_button-color-hover);
+      background: var(--_button-background-hover);
+    }
+  }
+}

@@ -1,0 +1,16 @@
+.industry-title {
+  margin-bottom: 96px;
+
+  color: var(--typography-default);
+
+  font: var(--headline-h2);
+
+  mark {
+    color: var(--general-blue);
+    background: none;
+  }
+
+  @media (max-width: 1249px) {
+    margin-bottom: 48px;
+  }
+}

@@ -1,0 +1,18 @@
+.pp-banner {
+  padding-block: 32px;
+
+  &__title {
+    color: var(--general-lime);
+
+    font: var(--headline-h1);
+    text-align: center;
+  }
+
+  @media only screen and (min-width: 768px) {
+    padding-block: 48px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    padding-block: 96px;
+  }
+}

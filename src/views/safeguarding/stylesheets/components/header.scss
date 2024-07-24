@@ -1,0 +1,39 @@
+.sf-header {
+  --content-column-space: 0;
+  --padding-block: 32px;
+
+  gap: 16px;
+
+  padding-block: var(--padding-block);
+
+  &__title {
+    color: var(--general-lime);
+
+    font: var(--headline-h1);
+    text-align: center;
+  }
+
+  &__content {
+    --column-value: calc(var(--content-column-space) + 1);
+
+    grid-column: var(--column-value) / calc(var(--column-value) * -1);
+
+    color: var(--scale-white-80);
+
+    font: var(--body-b1);
+    text-align: left;
+  }
+
+  @media only screen and (min-width: 768px) {
+    --padding-block: 48px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    --content-column-space: 1;
+    --padding-block: 80px;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    --padding-block: 96px;
+  }
+}

@@ -1,0 +1,173 @@
+@use 'stylesheets/themes';
+
+[hidden] {
+  display: none !important; /* stylelint-disable-line declaration-no-important */
+}
+
+.tabs-group {
+  $self: &;
+
+  --label-height: 60px;
+  --label-active-height: 60px;
+  --icon-offset: 16px;
+
+  @include themes.white;
+  @include themes.black;
+  @include themes.dark;
+  @include themes.blue;
+
+  &__navigation {
+    display: grid;
+    grid-template-rows: var(--label-active-height) 0fr;
+
+    overflow: hidden;
+
+    transition: 300ms;
+
+    &.opened {
+      grid-template-rows: var(--label-active-height) 1fr;
+    }
+  }
+
+  &__header {
+    position: relative;
+  }
+
+  &__controls {
+    display: grid;
+    grid-auto-rows: var(--label-active-height);
+
+    height: 100%;
+  }
+
+  &__dropdown {
+    display: grid;
+    grid-auto-rows: var(--label-height);
+
+    overflow: hidden;
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+
+    padding-inline: 16px;
+
+    overflow: hidden;
+
+    font: var(--title-t2);
+
+    cursor: pointer;
+
+    transition: all 300ms;
+
+    &:where(#{$self}__controls *) {
+      box-shadow:
+        0 0 0 1px var(--border-color),
+        inset 0 -1px 0 var(--border-color);
+    }
+
+    &:where(#{$self}__controls *:not(.active)) {
+      display: none;
+
+      color: var(--secondary-color);
+      background-color: var(--secondary-background);
+    }
+
+    &:where(#{$self}__controls *.active) {
+      color: var(--primary-color);
+      background-color: var(--primary-background);
+    }
+
+    &:where(#{$self}__controls *.active:where(.opened *)) {
+      box-shadow:
+        0 0 0 1px var(--border-color),
+        0 1px 0 var(--border-color);
+    }
+
+    &:where(#{$self}__dropdown *) {
+      box-shadow: 0 0 0 1px var(--border-color);
+    }
+
+    &:where(#{$self}__dropdown *:not(.active)) {
+      color: var(--dropdown-color);
+      background-color: var(--dropdown-background);
+    }
+
+    &:where(#{$self}__dropdown *.active) {
+      display: none;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    right: var(--icon-offset);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: var(--label-active-height);
+
+    color: var(--typography-white);
+
+    font-size: 24px;
+
+    transition: all 300ms;
+
+    &:where(.opened *) {
+      rotate: 180deg;
+    }
+  }
+
+  &__content {
+    display: grid;
+
+    ::slotted(*) {
+      grid-area: 1 / 1;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    --label-active-height: 100px;
+    --icon-offset: 60px;
+
+    &__label {
+      justify-content: center;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    --label-active-height: 140px;
+
+    &__controls {
+      grid-auto-columns: 1fr;
+      grid-auto-flow: column;
+    }
+
+    &__icon {
+      display: none;
+    }
+
+    &__label {
+      display: flex;
+
+      &:where(#{$self}__controls *) {
+        box-shadow:
+          0 0 0 1px var(--border-color),
+          inset 0 1px 0 var(--border-color),
+          inset 0 -1px 0 var(--border-color);
+      }
+
+      &:where(#{self}__controls *):not(.active) {
+        display: grid;
+      }
+
+      &:where([data-theme='white'] *):not(.active) {
+        background-color: transparent;
+        box-shadow: inset 0 0 0 1px var(--typography-default);
+      }
+    }
+  }
+}

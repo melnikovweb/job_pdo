@@ -1,0 +1,50 @@
+.mb-payment-schemes {
+  --image-size: 50px;
+  --image-space: 4px;
+  --image-radius: 12px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+
+  &__image {
+    aspect-ratio: 1;
+    width: var(--image-size);
+    margin: var(--image-space);
+
+    border-radius: var(--image-radius);
+
+    background: linear-gradient(153deg, var(--scale-white-10), transparent);
+  }
+
+  &__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  @media only screen and (min-width: 360px) {
+    --image-size: 60px;
+  }
+
+  @media only screen and (min-width: 414px) {
+    --image-size: 72px;
+    --image-radius: 16px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    --image-size: 140px;
+    --image-space: 10px;
+    --image-radius: 40px;
+
+    gap: 24px;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    --image-radius: 24px;
+
+    justify-content: space-between;
+    gap: 0;
+  }
+}

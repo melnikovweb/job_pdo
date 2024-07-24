@@ -1,0 +1,35 @@
+@use 'src/shared/stylesheets/mixins/state';
+
+:host {
+  @include state.css(filters-template-columns, 1fr);
+
+  position: relative;
+  z-index: 10;
+
+  display: block;
+}
+
+[hidden] {
+  display: none !important; /* stylelint-disable-line declaration-no-important */
+}
+
+.filters-group {
+  display: grid;
+
+  padding-block: 20px;
+
+  &__button-wrapper {
+    display: grid;
+    grid-row: 1;
+
+    ::slotted(button) {
+      font: var(--title-t1) !important; /* stylelint-disable-line declaration-no-important */
+    }
+  }
+
+  &__content {
+    display: grid;
+    gap: var(--container-gutter);
+    grid-template-columns: var(--_filters-template-columns);
+  }
+}

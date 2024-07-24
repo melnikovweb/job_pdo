@@ -1,0 +1,56 @@
+.career-about-us {
+  --container-columns: none;
+
+  display: grid;
+  gap: 16px;
+  grid-template-columns: auto;
+
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  &__title {
+    color: var(--general-blue);
+
+    font: var(--headline-h4);
+  }
+
+  &__groups {
+    display: grid;
+    grid-column: auto;
+    gap: 16px;
+  }
+
+  &__group_title {
+    font: var(--headline-h4);
+  }
+
+  &__description {
+    font: var(--body-b1);
+  }
+
+  &--highlighted {
+    color: var(--general-blue);
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+    gap: 24px;
+
+    padding-top: 48px;
+    padding-bottom: 48px;
+
+    &__groups {
+      gap: 24px;
+    }
+  }
+
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: 1fr 4fr;
+
+    padding-top: 48px;
+    padding-bottom: 96px;
+
+    &__groups {
+      gap: 24px;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+@use 'sass:meta';
+@use 'src/shared/stylesheets/mixins/regular-content';
+@layer libs, outdated, core, shared;
+
+@layer empty-page {
+  .ep-empty-page {
+    display: grid;
+    align-content: start;
+    gap: 32px;
+
+    padding-block: 32px;
+
+    &__header {
+      text-align: center;
+      text-wrap: balance;
+    }
+
+    &__title {
+      color: var(--general-blue);
+
+      font: var(--headline-h1);
+    }
+
+    &__content {
+      width: 100%;
+
+      .latepoint-w {
+        margin: 0 !important; /* stylelint-disable-line declaration-no-important */
+      }
+    }
+
+    @media only screen and (min-width: 768px) {
+      padding-block: 48px;
+    }
+
+    @media only screen and (min-width: 1024px) {
+      padding-block: 80px;
+    }
+
+    @media only screen and (min-width: 1280px) {
+      padding-block: 96px;
+    }
+  }
+}

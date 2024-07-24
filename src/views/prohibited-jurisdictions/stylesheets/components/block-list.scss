@@ -1,0 +1,48 @@
+@use 'src/shared/stylesheets/mixins/scroll';
+
+.pj-block-list {
+  --content-template-columns: 1fr;
+  --item-padding-block: 0;
+
+  display: grid;
+  gap: 32px;
+
+  &__title {
+    color: var(--typography-white);
+
+    font: var(--headline-h4);
+  }
+
+  &__content {
+    display: grid;
+    gap: 8px var(--container-gutter);
+    grid-template-columns: var(--content-template-columns);
+  }
+
+  &__item {
+    padding-block: var(--item-padding-block);
+
+    color: var(--typography-white);
+
+    font: var(--body-b2);
+  }
+
+  @media only screen and (max-width: 767px) {
+    &__content {
+      @include scroll.set-theme;
+
+      max-height: 304px;
+
+      overflow: hidden auto;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    --content-template-columns: repeat(2, 1fr);
+    --item-padding-block: 5px;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    --content-template-columns: repeat(3, 1fr);
+  }
+}

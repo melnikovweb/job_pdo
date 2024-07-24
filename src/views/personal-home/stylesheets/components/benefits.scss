@@ -1,0 +1,48 @@
+.hp-benefits {
+  display: grid;
+  row-gap: 16px;
+
+  padding-block: 32px;
+
+  &__item {
+    grid-column: span 4;
+
+    color: var(--typography-white);
+
+    font: var(--title-t2);
+  }
+
+  @media only screen and (min-width: 360px) {
+    row-gap: 24px;
+  }
+
+  @media only screen and (min-width: 768px) {
+    row-gap: 40px;
+
+    padding-block: 80px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    row-gap: 40px;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    row-gap: 80px;
+
+    &__item {
+      padding-right: 30px;
+    }
+  }
+
+  @media only screen and (min-width: 1440px) {
+    &__item {
+      padding-right: 80px;
+    }
+  }
+
+  @media only screen and (min-width: 1920px) {
+    &__item {
+      padding-right: 0;
+    }
+  }
+}

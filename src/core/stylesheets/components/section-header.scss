@@ -1,0 +1,98 @@
+.section-header {
+  --blocks-gap: 16px;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--blocks-gap);
+
+  &__label {
+    align-self: center;
+
+    padding-inline: 24px;
+    padding-block: 8px;
+
+    border-radius: 100vmax;
+
+    color: var(--general-black);
+    background-color: var(--general-lime);
+
+    font: var(--title-t4);
+    text-transform: uppercase;
+  }
+
+  &__title {
+    max-width: 1096px;
+
+    color: var(--title-color, var(--typography-white));
+
+    font: var(--headline-h1);
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  &__title mark {
+    color: var(--clr-lime);
+    background-color: transparent;
+  }
+
+  // TODO: check this
+  .region-title {
+    color: var(--general-blue);
+
+    font: var(--title-t2);
+  }
+
+  &__description {
+    display: grid;
+    gap: 16px;
+
+    max-width: var(--description-max-width, 968px);
+
+    color: var(--description-color, var(--scale-white-80));
+
+    font: var(--body-b1);
+    text-align: center;
+    margin-inline: auto;
+  }
+
+  &__description mark {
+    color: var(--general-lime);
+    background-color: transparent;
+    opacity: 1;
+  }
+
+  &__actions {
+    display: grid;
+    justify-content: center;
+    gap: 20px;
+    grid-template-columns: 1fr;
+
+    padding-block-start: var(--blocks-gap);
+  }
+
+  &__button {
+    width: 100%;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    &__actions {
+      grid-template-columns: repeat(auto-fit, 315px);
+    }
+  }
+
+  @media only screen and (min-width: 1920px) {
+    &__actions {
+      gap: 30px;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    &__actions {
+      flex-wrap: wrap;
+    }
+
+    &__button {
+      min-width: 100%;
+    }
+  }
+}

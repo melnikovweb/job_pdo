@@ -1,0 +1,154 @@
+@layer shared.parts.all-payment-methods {
+  .all-payment-methods {
+    --padding-block: 32px;
+    --title-color: var(--typography-white);
+    --description-color: var(--scale-white-80);
+    --ticker-column-gap: 16px;
+    --ticker-duration: 80000ms;
+    --preview-width: 44px;
+    --preview-height: 36px;
+    --preview-radius: 6px;
+    --preview-pading: 14px 8px;
+    --previews-offset: 32px;
+    --header-column-space: 0;
+    --content-column-space: 0;
+    --items-row-gap: 8px;
+    --items-column-gap: 4px;
+
+    row-gap: 24px;
+
+    overflow: hidden;
+
+    &:not([data-indent='none']) {
+      padding-block: var(--padding-block);
+    }
+
+    &__header {
+      --all-payment-methods-columns-offset: calc(var(--header-column-space) + 1);
+
+      display: grid;
+      grid-column: var(--all-payment-methods-columns-offset) / calc(var(--all-payment-methods-columns-offset) * -1);
+    }
+
+    &__previews {
+      --all-payment-methods-columns-offset: calc(var(--content-column-space) + 1);
+
+      display: flex;
+      flex-direction: column;
+      gap: var(--items-row-gap);
+    }
+
+    &__preview-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: var(--items-column-gap);
+    }
+
+    &__preview {
+      display: none;
+
+      width: var(--preview-width);
+      height: var(--preview-height);
+
+      border-radius: var(--preview-radius);
+
+      overflow: hidden;
+
+      background-color: var(--typography-white);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    @media only screen and (min-width: 360px) {
+      --items-row-gap: 8px;
+      --items-column-gap: 8px;
+      --preview-width: 48px;
+      --preview-height: 40px;
+    }
+
+    @media only screen and (min-width: 414px) {
+      --preview-width: 56px;
+      --preview-height: 46px;
+      --preview-radius: 8px;
+    }
+
+    @media only screen and (min-width: 768px) {
+      --preview-width: 96px;
+      --preview-height: 80px;
+      --preview-radius: 12px;
+      --preview-pading: 16px;
+      --previews-offset: 64px;
+      --padding-block: 48px;
+      --items-row-gap: 16px;
+      --items-column-gap: 16px;
+
+      row-gap: 48px;
+    }
+
+    @media only screen and (min-width: 1024px) {
+      --preview-width: 118px;
+      --preview-height: 100px;
+      --preview-radius: 16px;
+      --ticker-column-gap: 24px;
+      --previews-offset: 52px;
+      --padding-block: 96px;
+      --items-row-gap: 24px;
+      --items-column-gap: 24px;
+
+      row-gap: 80px;
+    }
+
+    @media only screen and (max-width: 1023px) {
+      &__preview-wrapper:nth-child(1) &__preview:nth-child(-n + 5),
+      &__preview-wrapper:nth-child(4) &__preview:nth-last-child(-n + 4),
+      &__preview-wrapper:nth-child(2) &__preview:not(:nth-child(-n + 5)):nth-child(-n + 9),
+      &__preview-wrapper:nth-child(3) &__preview:not(:nth-last-child(-n + 4)):nth-last-child(-n + 9) {
+        display: block;
+      }
+    }
+
+    @media only screen and (min-width: 1024px) and (max-width: 1439px) {
+      &__preview-wrapper:nth-child(1) &__preview:nth-child(-n + 5),
+      &__preview-wrapper:nth-child(4) &__preview:nth-last-child(-n + 2),
+      &__preview-wrapper:nth-child(2) &__preview:not(:nth-child(-n + 5)):nth-child(-n + 11),
+      &__preview-wrapper:nth-child(3) &__preview:not(:nth-last-child(-n + 2)):nth-last-child(-n + 7) {
+        display: block;
+      }
+    }
+
+    @media only screen and (min-width: 1440px) {
+      &__preview-wrapper:nth-child(1) &__preview:nth-child(-n + 5),
+      &__preview-wrapper:nth-child(2) &__preview:not(:nth-child(-n + 5), :nth-last-child(-n + 5)),
+      &__preview-wrapper:nth-child(3) &__preview:nth-last-child(-n + 5) {
+        display: block;
+      }
+
+      &__preview-wrapper:last-child {
+        display: none;
+      }
+    }
+
+    @media only screen and (min-width: 1280px) {
+      --ticker-column-gap: 40px;
+      --header-column-space: 1;
+      --previews-offset: 48px;
+      --items-row-gap: 32px;
+      --items-column-gap: 32px;
+    }
+
+    @media only screen and (min-width: 1440px) {
+      --header-column-space: 2;
+      --previews-offset: 112px;
+    }
+
+    @media only screen and (min-width: 1920px) {
+      --preview-radius: 16px;
+      --header-column-space: 3;
+      --content-column-space: 1;
+    }
+  }
+}

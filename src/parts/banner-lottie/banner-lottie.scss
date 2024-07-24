@@ -1,0 +1,89 @@
+@layer shared.parts.banner-lottie {
+  .banner-lottie {
+    text-align: center;
+
+    &__container {
+      padding-block: 32px;
+    }
+
+    &__content {
+      position: relative;
+      z-index: 1;
+    }
+
+    &__animation {
+      height: 76px;
+      margin-bottom: 32px;
+    }
+
+    &__title {
+      display: none;
+
+      margin-bottom: 32px;
+
+      color: var(--typography-white);
+
+      font: var(--headline-h1);
+    }
+
+    &__description {
+      margin-bottom: 32px;
+
+      color: var(--scale-white-80);
+
+      font: var(--body-b1);
+    }
+
+    &__video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+
+      width: 100%;
+      max-width: 100%;
+    }
+
+    @media only screen and (min-width: 768px) {
+      &__container {
+        padding-block: 48px;
+      }
+
+      &__animation {
+        height: 154px;
+      }
+    }
+
+    @media only screen and (min-width: 1024px) {
+      &__container {
+        padding-block: 96px;
+      }
+
+      &__animation {
+        margin-bottom: 48px;
+      }
+
+      &__description {
+        max-width: 784px;
+        margin: 0 auto 32px;
+      }
+    }
+
+    @media only screen and (min-width: 1280px) {
+      &__container {
+        padding-block: 120px;
+      }
+
+      &__animation {
+        height: 240px;
+        margin-bottom: 96px;
+      }
+    }
+
+    @media only screen and (min-width: 1920px) {
+      &__animation {
+        height: 303px;
+      }
+    }
+  }
+}

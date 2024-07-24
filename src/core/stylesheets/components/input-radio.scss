@@ -1,0 +1,55 @@
+@use 'src/shared/stylesheets/mixins/state';
+
+input[type='radio'] {
+  @include state.css(radio-size, 24px);
+  @include state.css(radio-dot-size, 6px);
+  @include state.css(radio-color, var(--scale-white-80));
+
+  all: unset;
+
+  position: relative;
+
+  display: block;
+
+  width: var(--_radio-size);
+  height: var(--_radio-size);
+
+  &::before,
+  &::after {
+    content: '';
+
+    position: absolute;
+    inset: 0;
+
+    border-radius: 50%;
+  }
+
+  &::before {
+    border: 1px solid var(--_radio-color);
+
+    transition: all 300ms;
+  }
+
+  &::after {
+    box-shadow: inset 0 0 0 var(--_radio-size) var(--_radio-color);
+
+    transition: all 150ms ease-in-out;
+    clip-path: circle(0);
+  }
+
+  &:not(:disabled) {
+    cursor: pointer;
+  }
+
+  &:checked {
+    &::after {
+      clip-path: circle(var(--_radio-dot-size));
+    }
+  }
+
+  &:hover,
+  &:checked,
+  label:hover & {
+    @include state.css(radio-color, var(--general-lime));
+  }
+}

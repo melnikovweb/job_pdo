@@ -1,0 +1,99 @@
+@use 'src/shared/stylesheets/mixins/scroll';
+
+.hm-container {
+  position: fixed;
+  z-index: 120;
+
+  height: calc(100vh - var(--primary-header-height));
+  height: calc(100dvh - var(--primary-header-height));
+  margin-top: var(--primary-header-height);
+
+  clip-path: inset(0 0 0 0);
+
+  background-color: var(--primary-background);
+
+  transition: all 150ms;
+  inset: 0;
+
+  &:not([aria-expanded='true']) {
+    clip-path: inset(0 0 100% 0);
+    appearance: none;
+
+    visibility: hidden;
+
+    pointer-events: none;
+  }
+
+  &[data-header-theme='black'] {
+    --primary-background: var(--general-black);
+    --secondary-background: var(--general-blue);
+    --accent-color: var(--general-lime);
+    --primary-text-color: var(--typography-white);
+    --secondary-text-color: var(--scale-white-60);
+    --accent-text-color: var(--scale-white-80);
+  }
+
+  &[data-header-theme='dark'] {
+    --primary-background: var(--additional-dark);
+    --secondary-background: var(--general-blue);
+    --accent-color: var(--general-lime);
+    --primary-text-color: var(--typography-white);
+    --secondary-text-color: var(--scale-white-60);
+    --accent-text-color: var(--scale-white-80);
+  }
+
+  &[data-header-theme='white'] {
+    --primary-background: var(--typography-white);
+    --secondary-background: var(--general-blue);
+    --accent-color: var(--general-blue);
+    --primary-text-color: var(--typography-default);
+    --secondary-text-color: var(--typography-secondary);
+    --accent-text-color: var(--scale-white-80);
+  }
+
+  &[data-header-theme='blue'] {
+    --primary-background: var(--general-blue);
+    --secondary-background: var(--general-blue);
+    --accent-color: var(--general-lime);
+    --primary-text-color: var(--typography-white);
+    --secondary-text-color: var(--scale-white-60);
+    --accent-text-color: var(--typography-secondary);
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    height: 100%;
+    padding-bottom: 16px;
+  }
+
+  &__navigation {
+    height: auto !important; /* stylelint-disable-line declaration-no-important */
+  }
+
+  &__groups {
+    @include scroll.set-theme('data-header-theme');
+
+    display: grid;
+    flex-grow: 1;
+    gap: 16px;
+    grid-template-rows: 1fr auto;
+
+    padding-bottom: 32px;
+
+    overflow: hidden auto;
+  }
+
+  @media only screen and (min-width: 768px) {
+    &__navigation {
+      display: none !important; /* stylelint-disable-line declaration-no-important */
+    }
+
+    &__group {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}

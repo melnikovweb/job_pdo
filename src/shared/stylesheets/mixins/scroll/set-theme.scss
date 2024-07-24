@@ -1,0 +1,33 @@
+@use 'sass:meta';
+@use 'sass:map';
+@use 'presets';
+@use 'sizes';
+
+$_sizes: meta.module-variables('sizes');
+
+@mixin set-theme($selector: 'data-theme', $size: 'md', $orientation: 'vertical') {
+  @each $name, $options in meta.module-variables('presets') {
+    &[#{$selector}='#{$name}'],
+    &:where([#{$selector}='#{$name}'] *) {
+      &::-webkit-scrollbar {
+        @if $orientation == 'horizontal' {
+          height: map.get($_sizes, $size);
+        } @else {
+          width: map.get($_sizes, $size);
+        }
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 100vmax;
+
+        background-color: map.get($options, 'primary');
+      }
+
+      &::-webkit-scrollbar-track {
+        border-radius: 100vmax;
+
+        background-color: map.get($options, 'secondary');
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+[data-arrow-button] {
+	--_button-size: var(--arrow-button-size, 32px);
+	--_icon-size: var(--arrow-button-icon-size, 24px);
+	--_border-radius: var(--arrow-button-radius, 6px);
+
+	all: unset;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	transition: all 300ms;
+
+	font-size: var(--_icon-size);
+	width: var(--_button-size);
+	aspect-ratio: 1;
+
+	border-radius: var(--_border-radius);
+	color: var(--_arrow-color);
+	background-color: var(--_button-background);
+
+	cursor: pointer;
+}
+
+[data-arrow-button][data-style="blue"] {
+	--_arrow-color: var(--arrow-button-color, var(--additional-dark));
+	--_button-background: var(--arrow-button-background, transparent);
+}
+
+[data-arrow-button][data-style="blue"]:active {
+	--_arrow-color: var(--arrow-button-color, var(--typography-white));
+	--_button-background: var(--arrow-button-background, var(--general-blue));
+}
+
+
+[data-arrow-button][data-style="lime"] {
+	--_arrow-color: var(--arrow-button-color, var(--typography-white));
+	--_button-background: var(--arrow-button-background, transparent);
+}
+
+[data-arrow-button][data-style="lime"]:where(:active, :hover) {
+	--_arrow-color: var(--arrow-button-color, var(--additional-dark));
+	--_button-background: var(--arrow-button-background, var(--general-lime));
+}
+
+
+@media (hover) {
+
+	[data-arrow-button][data-style="blue"]:hover {
+		--_arrow-color: var(--arrow-button-color, var(--typography-white));
+		--_button-background: var(--arrow-button-background, var(--general-blue));
+	}
+}
+
+@media only screen and (min-width: 768px) {
+
+	[data-arrow-button] {
+		--_button-size: var(--arrow-button-size, 40px);
+		--_border-radius: var(--arrow-button-radius, 8px);
+	}
+}
+
+@media only screen and (width > 1024px) {
+
+	[data-arrow-button] {
+		--_button-size: var(--arrow-button-size, 56px);
+	}
+}

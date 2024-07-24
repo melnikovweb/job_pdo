@@ -1,0 +1,517 @@
+@layer shared.parts.animated-cards-section {
+  .animated-cards-section {
+    $self: &;
+
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    padding-block: 32px;
+
+    &__title {
+      font: var(--headline-h1);
+      text-align: center;
+    }
+
+    &__description {
+      font: var(--body-b1);
+      text-align: center;
+    }
+
+    &__actions {
+      display: grid;
+      justify-content: center;
+      grid-template-columns: 1fr;
+
+      padding-bottom: 32px;
+    }
+
+    &__card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      border-radius: 8px;
+    }
+
+    &__card-video-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__card-video {
+      max-width: 100%;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .cards-iban-solutions {
+      #{ $self }__title {
+        padding-bottom: 24px;
+
+        color: var(--typography-default);
+      }
+
+      #{ $self }__cards {
+        display: grid;
+        gap: 20px;
+      }
+
+      #{ $self }__card {
+        justify-content: space-between;
+        gap: 8px;
+
+        padding: 16px;
+
+        background: var(--additional-light-grey);
+
+        img {
+          width: auto;
+          max-height: 208px;
+        }
+
+        &:nth-child(3) {
+          img {
+            max-height: 100%;
+          }
+        }
+
+        &:nth-child(4) {
+          img {
+            max-height: 100%;
+          }
+        }
+      }
+
+      #{ $self }__card-info {
+        display: grid;
+        gap: 8px;
+      }
+
+      #{ $self }__card-name {
+        color: var(--typography-default);
+
+        font: var(--title-t2);
+        text-align: center;
+      }
+
+      #{ $self }__card-description {
+        color: var(--typography-default);
+
+        font: var(--body-b1);
+        text-align: center;
+      }
+    }
+
+    .cards-accept-payments {
+      #{ $self }__info {
+        display: grid;
+        justify-items: center;
+      }
+
+      #{ $self }__title {
+        padding-bottom: 16px;
+
+        color: var(--typography-white);
+      }
+
+      #{ $self }__description {
+        grid-column: span 12 / span 12;
+
+        max-width: 650px;
+        padding-bottom: 32px;
+
+        color: var(--scale-white-80);
+      }
+
+      #{ $self }__cards {
+        display: grid;
+        gap: 8px;
+
+        width: 100%;
+      }
+
+      #{ $self }__card {
+        gap: 8px;
+
+        padding: 16px;
+
+        border: 1px solid var(--scale-white-10);
+
+        background: linear-gradient(180deg, #1d1d1d 0%, #0a0d13 100%);
+      }
+
+      #{ $self }__card-name {
+        color: var(--typography-white);
+
+        font: var(--title-t3);
+        text-align: center;
+      }
+    }
+
+    .cards-our-solution {
+      #{ $self }__title {
+        padding-bottom: 8px;
+
+        color: var(--typography-default);
+      }
+
+      #{ $self }__description {
+        padding-bottom: 32px;
+      }
+
+      #{ $self }__cards {
+        display: grid;
+        gap: 20px;
+      }
+
+      #{ $self }__card {
+        justify-content: space-between;
+        gap: 8px;
+
+        padding: 16px;
+
+        background: var(--additional-light-grey);
+
+        img {
+          width: auto;
+          max-height: 208px;
+        }
+
+        &:nth-child(4) {
+          img {
+            max-height: 100%;
+          }
+        }
+
+        &:nth-child(5),
+        &:nth-child(6) {
+          img {
+            max-height: 150px;
+          }
+        }
+      }
+
+      #{ $self }__card-info {
+        display: grid;
+        gap: 8px;
+      }
+
+      #{ $self }__card-name {
+        color: var(--typography-default);
+
+        font: var(--title-t2);
+        text-align: center;
+      }
+
+      #{ $self }__card-description {
+        color: var(--typography-default);
+
+        font: var(--body-b1);
+        text-align: center;
+      }
+    }
+
+    .cards-why-choose {
+      #{ $self }__title {
+        padding-bottom: 32px;
+
+        color: var(--typography-white);
+      }
+
+      #{ $self }__cards {
+        display: grid;
+        gap: 20px;
+        grid-template-areas:
+          'aa aa aa aa'
+          'ab ab ab ab'
+          'ba ba ba ba'
+          'ca ca ca ca'
+          'cb cb cb cb';
+      }
+
+      #{ $self }__card {
+        gap: 8px;
+
+        padding: 16px;
+
+        border: 1px solid var(--scale-white-10);
+
+        background: linear-gradient(180deg, #1d1d1d 0%, #0a0d13 100%);
+
+        &:nth-child(1) {
+          grid-area: aa;
+        }
+
+        &:nth-child(2) {
+          grid-area: ab;
+        }
+
+        &:nth-child(3) {
+          grid-area: ba;
+
+          padding: 16px 0 0;
+
+          background: linear-gradient(180deg, #0a0d13 0%, #1d1d1d 100%);
+
+          #{ $self }__card-name {
+            padding-inline: 16px;
+
+            font: var(--title-t2);
+          }
+        }
+
+        &:nth-child(4) {
+          grid-area: ca;
+        }
+
+        &:nth-child(5) {
+          grid-area: cb;
+        }
+      }
+
+      #{ $self }__card-name {
+        max-width: 380px;
+
+        color: var(--typography-white);
+
+        font: var(--title-t3);
+        text-align: center;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      padding-block: 48px;
+
+      &__actions {
+        grid-template-columns: repeat(auto-fit, 315px);
+
+        padding-bottom: 48px;
+      }
+
+      &__cards {
+        grid-template-columns: repeat(8, minmax(0, 1fr));
+      }
+
+      .cards-iban-solutions {
+        #{ $self }__title {
+          padding-bottom: 32px;
+        }
+
+        #{ $self }__card {
+          grid-column: span 8 / span 8;
+
+          padding: 32px 16px 24px;
+        }
+      }
+
+      .cards-accept-payments {
+        #{ $self }__description {
+          padding-bottom: 48px;
+        }
+        #{ $self }__cards {
+          gap: 20px;
+        }
+
+        #{ $self }__card {
+          border-radius: 24px;
+
+          &:nth-child(1),
+          &:nth-child(4) {
+            grid-column: span 5 / span 5;
+          }
+
+          &:nth-child(2),
+          &:nth-child(3) {
+            grid-column: span 3 / span 3;
+          }
+        }
+      }
+
+      .cards-our-solution {
+        #{ $self }__title {
+          padding-bottom: 16px;
+        }
+
+        #{ $self }__description {
+          padding-bottom: 48px;
+        }
+
+        #{ $self }__card {
+          grid-column: span 8 / span 8;
+
+          padding: 32px 16px 24px;
+        }
+
+        #{ $self }__card-info {
+          gap: 16px;
+        }
+      }
+
+      .cards-why-choose {
+        #{ $self }__title {
+          padding-bottom: 48px;
+        }
+
+        #{ $self }__cards {
+          grid-template-areas:
+            'aa aa aa aa ba ba ba ba'
+            'ab ab ab ab ba ba ba ba'
+            'ca ca ca ca cb cb cb cb';
+        }
+      }
+    }
+
+    @media screen and (min-width: 1024px) {
+      padding-block: 80px;
+
+      &__cards {
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+      }
+
+      &__actions {
+        padding-bottom: 56px;
+      }
+
+      .cards-iban-solutions {
+        #{ $self }__card {
+          grid-column: span 6 / span 6;
+
+          padding: 32px 16px 24px;
+
+          border-radius: 24px;
+
+          &:nth-child(3) {
+            grid-column: span 5 / span 5;
+          }
+
+          &:nth-child(4) {
+            grid-column: span 7 / span 7;
+          }
+        }
+      }
+
+      .cards-accept-payments {
+        #{ $self }__description {
+          padding-bottom: 56px;
+        }
+
+        #{ $self }__card {
+          gap: 16px;
+
+          padding: 32px;
+
+          border-radius: 32px;
+
+          &:nth-child(1),
+          &:nth-child(4) {
+            grid-column: span 8 / span 8;
+          }
+
+          &:nth-child(2),
+          &:nth-child(3) {
+            grid-column: span 4 / span 4;
+          }
+        }
+      }
+
+      .cards-our-solution {
+        #{ $self }__description {
+          padding-bottom: 56px;
+        }
+
+        #{ $self }__card {
+          grid-column: span 6 / span 6;
+
+          padding: 32px 16px 24px;
+
+          border-radius: 24px;
+
+          &:nth-child(1),
+          &:nth-child(2),
+          &:nth-child(3) {
+            grid-column: span 4 / span 4;
+          }
+
+          &:nth-child(4) {
+            grid-column: span 12 / span 12;
+          }
+        }
+      }
+
+      .cards-why-choose {
+        #{ $self }__title {
+          padding-bottom: 56px;
+        }
+
+        #{ $self }__cards {
+          grid-template-areas:
+            'aa aa aa aa ba ba ba ba ca ca ca ca'
+            'ab ab ab ab ba ba ba ba cb cb cb cb';
+        }
+        #{ $self }__card-name {
+          padding-bottom: 16px;
+        }
+      }
+    }
+
+    @media screen and (min-width: 1280px) {
+      padding-block: 96px;
+
+      &__card {
+        border-radius: 32px;
+      }
+
+      &__actions {
+        padding-bottom: 80px;
+      }
+
+      .cards-iban-solutions {
+        #{ $self }__card {
+          padding: 40px 24px 24px;
+        }
+
+        #{ $self }__card-info {
+          gap: 16px;
+        }
+      }
+
+      .cards-accept-payments {
+        #{ $self }__info {
+          grid-template-columns: repeat(12, minmax(0, 1fr));
+        }
+
+        #{ $self }__title {
+          grid-column: span 8 / span 8;
+          grid-column-start: 3;
+        }
+
+        #{ $self }__description {
+          padding-bottom: 96px;
+        }
+
+        #{ $self }__card {
+          gap: 24px;
+
+          padding: 40px;
+        }
+      }
+
+      .cards-our-solution {
+        #{ $self }__description {
+          padding-bottom: 96px;
+        }
+      }
+
+      .cards-why-choose {
+        #{ $self }__title {
+          padding-bottom: 96px;
+        }
+      }
+    }
+  }
+}

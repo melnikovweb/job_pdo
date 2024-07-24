@@ -1,0 +1,8 @@
+@use 'sass:meta';
+@layer libs, outdated, core, shared;
+
+@layer libs.deps {
+  @include meta.load-css('assets/libs/icons/style');
+  @include meta.load-css('assets/libs/swiper/swiper');
+  @include meta.load-css('assets/libs/choices/choices.min');
+}

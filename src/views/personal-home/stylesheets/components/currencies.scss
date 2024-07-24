@@ -1,0 +1,45 @@
+.hp-currencies-section {
+  --title-color: var(--general-blue);
+  --description-color: var(--general-black);
+  --ticker-duration: 40000ms;
+  --hp-currencies-section-content-gap: 8px;
+  --ticker-column-gap: var(--hp-currencies-section-content-gap);
+
+  display: grid;
+  gap: 32px;
+
+  padding-block: 32px;
+
+  background-color: var(--typography-white);
+
+  &[data-theme='dark'] {
+    --title-color: var(--general-lime);
+    --description-color: var(--scale-white-80);
+
+    background-color: var(--additional-dark);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--hp-currencies-section-content-gap);
+
+    overflow: hidden;
+  }
+
+  @media only screen and (min-width: 768px) {
+    --hp-currencies-section-content-gap: 24px;
+
+    gap: 48px;
+
+    padding-block: 48px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    --hp-currencies-section-content-gap: 40px;
+
+    gap: 80px;
+
+    padding-block: 96px;
+  }
+}

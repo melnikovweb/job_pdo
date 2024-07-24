@@ -1,0 +1,104 @@
+.au-banner {
+  --content-columns-space: 0;
+  --actions-columns-space: 0;
+  --actions-template: 1fr;
+  --image-columns-space: 0;
+  --offset-threshold: 48px;
+  --padding-block-start: 48px;
+  --padding-block-end: 32px;
+  --margin-block-end: 32px;
+  --row-gap: 32px;
+
+  display: grid;
+
+  margin-bottom: var(--margin-block-end);
+
+  &__section {
+    position: relative;
+    isolation: isolate;
+
+    display: grid;
+    gap: 32px;
+
+    &:nth-child(1) {
+      padding-block: var(--padding-block-start) var(--padding-block-end);
+    }
+
+    &:nth-child(2) {
+      padding-block-end: var(--padding-block-end);
+    }
+  }
+
+  &__content,
+  &__actions,
+  &__img-wrapper {
+    --au-banner-space: calc(var(--au-banner-columns-space) + 1);
+
+    grid-column: var(--au-banner-space) / calc(var(--au-banner-space) * -1);
+  }
+
+  &__content {
+    --au-banner-columns-space: var(--content-columns-space);
+
+    display: grid;
+    gap: 16px;
+
+    text-align: center;
+  }
+
+  &__actions {
+    --au-banner-columns-space: var(--actions-columns-space);
+
+    display: grid;
+    gap: 16px var(--container-gutter);
+    grid-template-columns: var(--actions-template);
+  }
+
+  &__img-wrapper {
+    --au-banner-columns-space: var(--image-columns-space);
+
+    margin-top: calc(var(--offset-threshold) * -1);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      border-radius: 8px;
+    }
+  }
+
+  &__headline {
+    color: var(--typography-white);
+  }
+
+  &__description {
+    color: var(--scale-white-80);
+
+    font: var(--body-b1);
+  }
+
+  @media only screen and (min-width: 768px) {
+    --row-gap: 48px;
+    --padding-block-start: 48px;
+    --padding-block-end: 56px;
+    --margin-block-end: 48px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    --content-columns-space: 2;
+    --actions-template: repeat(2, 1fr);
+    --offset-threshold: 126px;
+    --padding-block-start: 80px;
+    --row-gap: 98px;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    --content-columns-space: 3;
+    --actions-columns-space: 3;
+    --image-columns-space: 1;
+    --padding-block-start: 96px;
+    --padding-block-end: 80px;
+    --margin-block-end: 56px;
+  }
+}

@@ -1,0 +1,26 @@
+.pricing-business-filter {
+  display: grid;
+  gap: 24px;
+
+  margin-top: 32px;
+  padding: 16px;
+
+  border-radius: 4px;
+
+  background: var(--scale-white-5);
+
+  @media only screen and (min-width: 768px) {
+    padding: 24px;
+
+    border-radius: 8px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+
+    padding: 0;
+
+    background: transparent;
+  }
+}

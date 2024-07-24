@@ -1,0 +1,62 @@
+.au-profile-card {
+  --position-gap: 8px;
+  --photo-radius: 8px;
+  --content-offset: 0;
+
+  display: grid;
+  gap: 16px;
+
+  &__content {
+    display: grid;
+    align-content: start;
+    gap: 8px;
+  }
+
+  &__img-wrapper {
+    position: relative;
+
+    aspect-ratio: 1 / 1.05;
+    width: 100%;
+
+    border-radius: var(--photo-radius);
+
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__position {
+    position: absolute;
+    bottom: var(--position-gap);
+    left: var(--position-gap);
+  }
+
+  &__name {
+    color: var(--additional-dark);
+
+    font: var(--headline-h4);
+  }
+
+  &__about {
+    color: var(--typography-secondary);
+
+    font: var(--body-b1);
+  }
+
+  @media only screen and (min-width: 768px) {
+    --position-gap: 16px;
+    --content-offset: 16px;
+
+    gap: 24px;
+  }
+
+  @media only screen and (min-width: 1920px) {
+    --photo-radius: 16px;
+
+    gap: 24px;
+  }
+}

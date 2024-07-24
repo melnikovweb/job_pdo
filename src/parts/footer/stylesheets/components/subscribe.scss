@@ -1,0 +1,82 @@
+.ft-subscribe {
+  --title-column: 1 / -1;
+  --form-column: 1 / -1;
+
+  display: grid;
+  gap: 16px var(--container-gutter);
+  grid-template-columns: repeat(var(--container-columns), 1fr);
+
+  &__title {
+    grid-column: var(--title-column);
+
+    color: var(--typography-white);
+
+    font: var(--title-t2);
+    text-wrap: balance;
+  }
+
+  &__form {
+    display: grid;
+    align-items: center;
+    grid-column: var(--form-column);
+    gap: 16px;
+
+    :where(form, .tnp-field-email, input) {
+      all: unset !important; /* stylelint-disable-line declaration-no-important */
+
+      display: block !important; /* stylelint-disable-line declaration-no-important */
+    }
+
+    .tnp-field-email {
+      input {
+        width: 100% !important; /* stylelint-disable-line declaration-no-important */
+        padding-block: 16px !important; /* stylelint-disable-line declaration-no-important */
+
+        border-bottom: 1px solid var(--scale-white-40) !important; /* stylelint-disable-line declaration-no-important */
+
+        color: var(--scale-white-80) !important; /* stylelint-disable-line declaration-no-important */
+
+        font: var(--body-b1) !important; /* stylelint-disable-line declaration-no-important */
+
+        transition: all 300ms !important; /* stylelint-disable-line declaration-no-important */
+
+        &::placeholder {
+          color: var(--scale-white-80) !important; /* stylelint-disable-line declaration-no-important */
+        }
+
+        &:focus {
+          border-color: var(--general-lime) !important; /* stylelint-disable-line declaration-no-important */
+
+          color: var(--typography-white) !important; /* stylelint-disable-line declaration-no-important */
+        }
+      }
+    }
+
+    .tnp-field-button {
+      display: none;
+    }
+  }
+
+  &__button {
+    width: 100%;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    --title-column: span 6;
+    --form-column: span 6;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    --title-column: span 5;
+    --form-column: span 7;
+
+    &__form {
+      grid-template-columns: 2fr 1fr;
+    }
+  }
+
+  @media only screen and (min-width: 1440px) {
+    --title-column: span 4;
+    --form-column: span 6 / -1;
+  }
+}

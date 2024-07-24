@@ -1,0 +1,57 @@
+@layer shared.parts.integration-component {
+
+	.integration-component__content {
+		display: grid;
+		row-gap: var(--content-gap);
+	}
+
+	.integration-component__group {
+		display: flex;
+		flex-direction: column;
+		gap: var(--group-gap);
+	}
+
+	.integration-section__pics {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, var(--preview-size));
+		gap: var(--pics-gap);
+	}
+
+	.integration-section__pics img {
+		width: 100%;
+		height: auto;
+	}
+
+	.integration-component__name {
+		color: var(--title-color);
+		font: var(--headline-h4);
+	}
+
+	.integration-component__text {
+		color: var(--text-color);
+		font: var(--body-b2);
+		display: grid;
+		align-content: start;
+		gap: 8px;
+	}
+
+	.integration-component__links {
+		display: grid;
+		row-gap: 4px;
+	}
+
+	.integration-component__link {
+		display: inline-flex;
+		flex-direction: row-reverse;
+		justify-content: flex-end;
+		align-items: center;
+		color: var(--link-color);
+
+		font: var(--button-font);
+		gap: 0.36em;
+	}
+
+	.integration-component__link::before {
+		font-size: 22px;
+	}
+}

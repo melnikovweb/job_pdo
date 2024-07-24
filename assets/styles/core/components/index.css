@@ -1,0 +1,10 @@
+@import url('./arrow-button.css?ver=1.0.0') layer(arrow-button);
+@import url('./chips.css?ver=1.0.0') layer(chips-item);
+@import url('./currency-card.css?ver=1.0.0') layer(currency-card);
+@import url('./stepper.css?ver=1.0.0') layer(stepper);
+@import url('./ticker-row.css?ver=1.0.0') layer(ticker-row);
+@import url('./filters-search-wrapper.css?ver=1.0.0') layer(filters-search-wrapper);
+@import url('./payment-method-filters.css?ver=1.0.0') layer(payment-method-filters);
+@import url('./payment-method-type.css?ver=1.0.0') layer(payment-method-type);
+@import url('./supported-countries.css?ver=1.0.0') layer(supported-countries);
+@import url('./posts-pagination.css?ver=1.0.0') layer(posts-pagination);

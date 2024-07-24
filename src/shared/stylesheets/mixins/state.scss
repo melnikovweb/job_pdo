@@ -1,0 +1,7 @@
+@mixin css($name, $default-value: null) {
+  @if $default-value {
+    --_#{$name}: var(--#{$name}, #{$default-value});
+  } @else {
+    --_#{$name}: var(--#{$name});
+  }
+}

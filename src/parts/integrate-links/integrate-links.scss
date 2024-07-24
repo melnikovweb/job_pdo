@@ -1,0 +1,119 @@
+@layer shared.parts.integrate-links {
+  .integrate-links {
+    padding-block: 32px;
+
+    &__title {
+      color: var(--general-lime);
+
+      font: var(--headline-h2);
+    }
+
+    &__row {
+      margin-top: 32px;
+    }
+
+    &__links {
+      display: grid;
+      gap: 24px;
+    }
+
+    &__link {
+      position: relative;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding-bottom: 8px;
+
+      overflow: hidden;
+
+      color: var(--typography-white);
+
+      font: var(--title-t2);
+
+      transition: var(--def-transition);
+
+      &::before,
+      &::after {
+        content: '';
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        display: block;
+
+        width: 100%;
+        height: 0.895px;
+
+        opacity: 0.4;
+
+        transition: var(--def-transition);
+      }
+
+      &::before {
+        background-color: var(--typography-white);
+      }
+
+      &::after {
+        background-color: var(--general-lime);
+
+        transform: translateX(-100%);
+      }
+
+      &:hover::after {
+        transform: translateX(0);
+      }
+
+      &:hover {
+        color: var(--general-lime);
+      }
+    }
+
+    &__icon {
+      margin-left: 15px;
+
+      font-size: 24px;
+
+      transition: var(--def-transition);
+    }
+
+    @media (min-width: 768px) {
+      padding-block: 48px;
+
+      &__row {
+        margin-top: 48px;
+      }
+
+      &__links {
+        gap: 40px;
+      }
+
+      &__icon {
+        font-size: 40px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      padding-block: 96px;
+
+      &__row {
+        display: grid;
+        grid-template-columns: repeat(var(--container-columns), 1fr);
+
+        margin-top: 80px;
+      }
+
+      &__links {
+        grid-column: span 8;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      &__links {
+        grid-column: span 6;
+      }
+    }
+  }
+}

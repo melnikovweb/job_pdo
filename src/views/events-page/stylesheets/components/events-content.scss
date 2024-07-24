@@ -1,0 +1,75 @@
+.ev-events-welcome {
+  max-width: 650px;
+
+  text-align: center;
+
+  &__title {
+    margin-bottom: 21px;
+
+    color: var(--general-lime);
+
+    font: var(--headline-h1);
+    text-align: center;
+  }
+
+  &__description {
+    color: var(--scale-white-80);
+
+    font: var(--body-b1);
+    text-align: center;
+  }
+}
+
+.ev-event-title {
+  color: var(--general-lime);
+
+  font: var(--headline-h3);
+}
+
+.ev-event-row:nth-child(2n) .ev-event-title {
+  color: var(--general-blue);
+}
+
+.ev-event-date {
+  color: var(--typography-white);
+
+  font: var(--title-t3);
+}
+
+.ev-event-row:nth-child(2n) .ev-event-date {
+  color: var(--typography-default);
+}
+
+.ev-event-description {
+  color: var(--scale-white-80);
+
+  font: var(--body-b1);
+}
+
+.ev-event-row:nth-child(2n) .ev-event-description {
+  color: var(--typography-secondary);
+}
+
+.ev-event-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  min-height: 260px;
+}
+
+.ev-event-row:nth-child(2n) .ev-event-button {
+  border: 1px solid var(--typography-default);
+
+  color: var(--typography-default);
+}
+
+@media only screen and (min-width: 1024px) {
+  .ev-event-image {
+    width: 50%;
+  }
+
+  .ev-event-button {
+    max-width: 315px;
+  }
+}

@@ -1,0 +1,31 @@
+.pricing-business-header {
+  display: grid;
+
+  &__title {
+    color: var(--typography-white);
+
+    font: var(--title-t1);
+  }
+
+  &__description {
+    color: var(--scale-white-80);
+
+    font: var(--body-b1);
+  }
+
+  &__content {
+    display: grid;
+    grid-column: 3/-3;
+    gap: 16px;
+
+    text-align: center;
+
+    @media (max-width: 1249px) {
+      grid-column: 2/-2;
+    }
+
+    @media (max-width: 768px) {
+      grid-column: span 12;
+    }
+  }
+}

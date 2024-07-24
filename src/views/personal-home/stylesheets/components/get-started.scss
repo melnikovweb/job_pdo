@@ -1,0 +1,23 @@
+.hp-get-started {
+  --group-columns: 2;
+
+  display: grid;
+  gap: 32px;
+
+  padding-block: 32px;
+
+  &__header {
+    --title-color: var(--typography-white);
+    --description-color: var(--typography-white);
+  }
+
+  @media only screen and (min-width: 768px) {
+    gap: 48px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    gap: 96px;
+
+    padding-block: 96px;
+  }
+}

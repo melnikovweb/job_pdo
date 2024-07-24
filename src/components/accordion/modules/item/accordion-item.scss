@@ -1,0 +1,120 @@
+@use 'src/shared/stylesheets/mixins/state';
+
+:host {
+  display: block;
+}
+
+.accordion-item {
+  $self: &;
+
+  --_title-color: var(--_accordion-title-color);
+  --_icon-color: var(--_accordion-icon-color);
+  --_icon-size: 16px;
+  --_rotation-icon: 90deg;
+  --_content-space-block: 0;
+
+  display: grid;
+  align-content: start;
+  grid-template-rows: auto 0fr;
+
+  padding-block-end: 16px;
+
+  border-bottom: 1px solid var(--_accordion-underline-color);
+
+  transition: all var(--_accordion-animation-duration) calc(var(--_accordion-animation-duration) / 2);
+
+  &[data-theme='dark'],
+  &[data-theme='black'] {
+    @include state.css(accordion-animation-duration, 300ms);
+    @include state.css(accordion-content-color, var(--scale-white-80));
+    @include state.css(accordion-title-color, var(--scale-white-80));
+    @include state.css(accordion-title-color-active, var(--general-lime));
+    @include state.css(accordion-icon-color, currentColor);
+    @include state.css(accordion-icon-color-active, var(--general-lime));
+    @include state.css(accordion-underline-color, var(--scale-white-10));
+    @include state.css(accordion-underline-color-active, var(--general-lime));
+  }
+
+  &[data-theme='white'],
+  &[data-theme='blue'] {
+    @include state.css(accordion-animation-duration, 300ms);
+    @include state.css(accordion-content-color, var(--typography-default));
+    @include state.css(accordion-title-color, var(--typography-default));
+    @include state.css(accordion-title-color-active, var(--general-blue));
+    @include state.css(accordion-icon-color, var(--typography-default));
+    @include state.css(accordion-icon-color-active, var(--general-blue));
+    @include state.css(accordion-underline-color, var(--general-blue));
+    @include state.css(accordion-underline-color-active, var(--general-blue));
+  }
+
+  &.active {
+    --_title-color: var(--_accordion-title-color-active);
+    --_icon-color: var(--_accordion-icon-color-active);
+    --_rotation-icon: 0deg;
+    --_content-space-block: 16px;
+
+    grid-template-rows: auto 1fr;
+
+    border-color: var(--_accordion-underline-color-active);
+
+    transition: all var(--_accordion-animation-duration);
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+
+    color: var(--_title-color);
+
+    font: var(--body-b1);
+  }
+
+  &__content {
+    display: grid;
+    gap: 16px;
+
+    padding-block-start: var(--_content-space-block);
+
+    overflow: hidden;
+
+    color: var(--_accordion-content-color);
+    opacity: 0;
+
+    font: var(--body-b2);
+
+    transition: all var(--_accordion-animation-duration);
+
+    &:where(#{$self}.active *) {
+      opacity: 1;
+
+      transition: all var(--_accordion-animation-duration) calc(var(--_accordion-animation-duration) / 2);
+    }
+  }
+
+  &__icon {
+    display: grid;
+    grid-area: 1 / 1;
+
+    font-size: var(--_icon-size);
+
+    &::before,
+    &::after {
+      content: '';
+
+      grid-area: icon;
+
+      width: 1em;
+      height: max(1px, 0.12em);
+
+      background: var(--_icon-color);
+
+      transform-origin: center center;
+      transition: all var(--_accordion-animation-duration);
+    }
+
+    &::after {
+      rotate: var(--_rotation-icon);
+    }
+  }
+}

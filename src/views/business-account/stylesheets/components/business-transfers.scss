@@ -1,0 +1,144 @@
+.business-transfers {
+  --section-columns: 3;
+  --groups-offset: 24px;
+  --groups-gap-line: 1px;
+
+  display: grid;
+  gap: 32px;
+
+  padding-block: 32px;
+
+  &__header {
+    --title-color: var(--typography-white);
+  }
+
+  &__title + &__description {
+    margin-top: 16px;
+  }
+
+  &__groups {
+    display: grid;
+    gap: 1px;
+    grid-template-columns: repeat(var(--section-columns), 1fr);
+
+    margin: -1px;
+    margin-top: 80px;
+
+    overflow: hidden;
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    padding-inline: 8px;
+    padding-block: 16px;
+
+    outline: 1px solid #45494d;
+  }
+
+  &__name {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    color: var(--clr-white);
+
+    font: var(--title-t1);
+  }
+
+  &__logo {
+    flex-shrink: 0;
+
+    aspect-ratio: 1;
+    width: 72px;
+    padding: 10px;
+
+    border-radius: 100vmax;
+
+    overflow: hidden;
+
+    background: linear-gradient(153deg, rgb(255 255 255 / 13%) 0%, rgb(255 255 255 / 0%) 100%);
+  }
+
+  &__logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  &__caption {
+    color: var(--scale-white-80);
+
+    font: var(--body-b1);
+  }
+
+  @media only screen and (max-width: 1224px) {
+    --section-columns: 2;
+  }
+
+  @media only screen and (max-width: 768px) {
+    --button-width: 100%;
+
+    &__groups {
+      margin-top: 48px;
+    }
+  }
+
+  @media only screen and (max-width: 694px) {
+    --section-columns: 1;
+
+    &__group {
+      min-height: 96px;
+
+      pointer-events: none;
+
+      &.active {
+        display: flex;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 414px) {
+    &__logo {
+      width: 40px;
+      height: 40px;
+    }
+
+    &__country {
+      width: 32px;
+      height: 32px;
+    }
+
+    &__country-count {
+      font-size: 18px;
+      line-height: 1.1111;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    gap: 48px;
+
+    padding-block: 48px;
+
+    &__groups {
+      margin-block: -1px;
+      margin-inline: -24px;
+    }
+
+    &__group {
+      gap: 24px;
+
+      padding-inline: 24px;
+      padding-block: 32px;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    gap: 80px;
+
+    padding-block: 96px;
+  }
+}

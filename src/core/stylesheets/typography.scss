@@ -1,0 +1,73 @@
+:root {
+  --primary-family: 'Syne', sans-serif;
+  --secondary-family: 'DM Sans', sans-serif;
+  --headline-h1: 700 24px/1.5 var(--primary-family);
+  --headline-h2: 700 18px/1.5 var(--primary-family);
+  --headline-h3: 700 16px/1.5 var(--primary-family);
+  --headline-h4: 700 14px/1.5 var(--primary-family);
+  --headline-h5: 700 12px/1.5 var(--primary-family);
+  --headline-h6: 700 10px/1.5 var(--primary-family);
+  --title-t1: 600 16px/1.5 var(--secondary-family);
+  --title-t2: 600 16px/1.5 var(--secondary-family);
+  --title-t3: 600 14px/1.5 var(--secondary-family);
+  --title-t4: 600 12px/1.5 var(--secondary-family);
+  --title-t5: 600 10px/1.5 var(--secondary-family);
+  --title-t6: 600 8px/1.5 var(--secondary-family);
+  --body-b1: 400 14px/1.5 var(--secondary-family);
+  --body-b2: 400 12px/1.5 var(--secondary-family);
+  --body-b3: 400 10px/1.5 var(--secondary-family);
+  --body-b4: 400 8px/1.5 var(--secondary-family);
+  --body-b5: 400 6px/1.5 var(--secondary-family);
+  --body-b6: 400 4px/1.5 var(--secondary-family);
+  --button-font: 700 12px/1.5 var(--primary-family);
+
+  @media only screen and (min-width: 768px) {
+    --headline-h1: 700 48px/1.5 var(--primary-family);
+    --headline-h2: 700 36px/1.5 var(--primary-family);
+    --headline-h3: 700 32px/1.5 var(--primary-family);
+    --headline-h4: 700 28px/1.5 var(--primary-family);
+    --headline-h5: 700 24px/1.5 var(--primary-family);
+    --headline-h6: 700 16px/1.5 var(--primary-family);
+    --title-t1: 600 24px/1.5 var(--secondary-family);
+    --title-t2: 600 18px/1.5 var(--secondary-family);
+    --title-t3: 600 16px/1.5 var(--secondary-family);
+    --title-t4: 600 14px/1.5 var(--secondary-family);
+    --title-t5: 600 12px/1.5 var(--secondary-family);
+    --title-t6: 600 10px/1.5 var(--secondary-family);
+    --body-b1: 400 18px/1.5 var(--secondary-family);
+    --body-b2: 400 16px/1.5 var(--secondary-family);
+    --body-b3: 400 14px/1.5 var(--secondary-family);
+    --body-b4: 400 12px/1.5 var(--secondary-family);
+    --body-b5: 400 10px/1.5 var(--secondary-family);
+    --body-b6: 400 8px/1.5 var(--secondary-family);
+    --button-font: 700 16px/1.5 var(--primary-family);
+  }
+
+  @media only screen and (min-width: 1025px) {
+    --headline-h1: 700 48px/1.5 var(--primary-family);
+    --headline-h2: 700 40px/1.5 var(--primary-family);
+    --headline-h3: 700 36px/1.5 var(--primary-family);
+    --headline-h4: 700 32px/1.5 var(--primary-family);
+    --headline-h5: 700 24px/1.5 var(--primary-family);
+    --headline-h6: 700 24px/1.5 var(--primary-family);
+    --title-t1: 600 32px/1.5 var(--secondary-family);
+    --title-t2: 600 24px/1.5 var(--secondary-family);
+    --title-t3: 600 18px/1.5 var(--secondary-family);
+    --title-t4: 600 16px/1.5 var(--secondary-family);
+    --title-t5: 600 14px/1.5 var(--secondary-family);
+    --title-t6: 600 12px/1.5 var(--secondary-family);
+    --body-b1: 400 18px/1.5 var(--secondary-family);
+    --body-b2: 400 16px/1.5 var(--secondary-family);
+    --body-b3: 400 14px/1.5 var(--secondary-family);
+    --body-b4: 400 12px/1.5 var(--secondary-family);
+    --body-b5: 400 10px/1.5 var(--secondary-family);
+    --body-b6: 400 8px/1.5 var(--secondary-family);
+    --button-font: 700 16px/1.5 var(--primary-family);
+  }
+}
+
+@for $index from 1 through 6 {
+  h#{$index} {
+    font: var(--headline-h#{$index});
+  }
+}

@@ -1,0 +1,202 @@
+/* TODO Rework and migrate to sass to a global component and change names */
+.payment-methods-filters {
+	--filters-icon-size: 24px;
+
+	--filters-template-columns: var(--custom-template-columns, 1fr);
+	--filters-template-headers: var(--filters-icon-size) 1fr;
+	--filters-headers-gap: 16px;
+}
+
+.payment-methods-filters__control {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	padding-block: 16px;
+	font: var(--body-b1);
+	border-bottom: 1px solid var(--scale-white-40);
+}
+
+.payment-methods-filters__control .choices {
+	display: flex;
+	flex-direction: row-reverse;
+	align-items: center;
+	width: 100%;
+}
+
+.payment-methods-filters__control .choices::before {
+	font-size: 24px;
+	transition: all 300ms;
+	color: var(--typography-white);
+}
+
+.payment-methods-filters__control .choices.is-open::before {
+	rotate: 180deg;
+}
+
+.payment-methods-filters__control .choices .filters-search-wrapper input {
+	opacity: 0;
+	transition: all 300ms;
+}
+
+.payment-methods-filters__control .choices__item--selectable {
+	grid-column: 2;
+	transition: all 300ms;
+}
+
+.payment-methods-filters__control .choices .filters-search-wrapper input:where(.choices.is-open *) {
+	opacity: 1;
+}
+
+.payment-methods-filters__control .choices__inner .choices__item--selectable:where(.choices.is-open *) {
+	opacity: 0;
+}
+
+.payment-methods-filters__control .choices__inner {
+	display: grid;
+	position: relative;
+	background-color: transparent;
+	border: none;
+	padding: 0;
+	min-height: 0;
+	color: var(--typography-white);
+
+	font: var(--body-b1);
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+
+.payment-methods-filters__control .choices__inner > div {
+	grid-area: 1 / 1;
+	overflow: hidden;
+}
+
+.payment-methods-filters__control .choices__list--single {
+	padding: 0;
+	display: grid;
+	grid-template-columns: var(--filters-template-headers);
+	gap: var(--filters-headers-gap);
+}
+
+
+.payment-methods-filters__control .choices__placeholder {
+	opacity: 1;
+	grid-column: 2;
+}
+
+.payment-methods-filters__control .choices__list--dropdown {
+	background: var(--additional-dark-dropdown);
+	border: 0;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+	z-index: 5;
+	margin-top: 16px;
+}
+
+.payment-methods-filters__control .choices__item {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.payment-methods-filters__control .choices__list--dropdown .choices__item {
+	font: var(--body-b2);
+	background: var(--additional-dark-dropdown);
+	color: var(--typography-white);
+	padding-block: 0;
+	padding-inline: 30px;
+	height: 60px;
+}
+
+.payment-methods-filters__control .choices__item img {
+	width: 32px;
+	height: 32px;
+	border-radius:100%;
+	object-fit: cover;
+}
+
+.payment-methods-filters__control .choices__list--dropdown .choices__item img{
+	width: 24px;
+	height: 24px;
+}
+
+.payment-methods-filters__control .choices__list--dropdown .choices__item::after,
+.payment-methods-filters__control .choices__list--dropdown .choices__item[data-value=""] {
+	display: none;
+}
+
+.payment-methods-filters__control .choices__list--dropdown .choices__item.is-highlighted {
+	background: var(--general-blue);
+}
+
+/* TODO There is a mixin for scrolling */
+.payment-methods-filters__control .choices__list::-webkit-scrollbar {
+	width: 1px;
+}
+
+.payment-methods-filters__control .choices__list::-webkit-scrollbar-track {
+	border-radius: 8px;
+	background-color: var(--typography-secondary);
+}
+
+.payment-methods-filters__control .choices__list::-webkit-scrollbar-thumb {
+	border-radius: 8px;
+	background-color: var(--general-lime);
+}
+
+.payment-methods-filters__control .choices::after {
+	margin-top: -12px;
+	top: 50%;
+	right: 0;
+	width: 24px;
+	height: 24px;
+	background-size: 100% auto;
+	background-position: center center;
+	background-repeat: no-repeat;
+	border: 0;
+	transition: var(--def-transition);
+}
+
+.payment-methods-filters__control .choices.is-open::after {
+	margin-top: -12px;
+	transform: rotate(180deg);
+	border: 0;
+}
+
+.payment-methods-filters__control.error
+.choices[data-type*="select-one"]
+.choices__inner {
+	border-color: var(--clr-orange);
+}
+
+@media only screen and (min-width: 768px) {
+	.payment-methods-filters__control .choices__list--dropdown .choices__item img{
+		width: 32px;
+		height: 32px;
+	}
+}
+
+@media only screen and (min-width: 1024px) {
+
+	.payment-methods-filters {
+		--filters-template-columns: var(--custom-template-columns, 2fr repeat(2, 1fr));
+	}
+
+	.payment-methods-filters__control:first-child {
+		grid-column: span 2;
+	}
+
+	.payment-methods-filters__dropdown-button {
+		display: none;
+	}
+
+	.payment-methods-filters__dropdown,
+	.payment-methods-filters__dropdown-wrapper {
+		display: contents;
+	}
+
+	.payment-methods-filters__control .choices__list--dropdown .choices__item {
+		height: 60px;
+	}
+}
+

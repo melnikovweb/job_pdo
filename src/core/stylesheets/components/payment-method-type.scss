@@ -1,0 +1,52 @@
+.payment-method-type {
+  --banner-width: 45px;
+  --banner-height: 28px;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  white-space: normal;
+
+  &__banner {
+    flex-shrink: 0;
+
+    width: var(--banner-width);
+    height: var(--banner-height);
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    background: var(--typography-white);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__title {
+    color: var(--typography-white);
+
+    font: var(--title-t3);
+  }
+
+  &__description {
+    color: var(--scale-white-80);
+
+    font: var(--body-b1);
+  }
+
+  @media only screen and (min-width: 768px) {
+    --banner-width: 86px;
+    --banner-height: 50px;
+  }
+}

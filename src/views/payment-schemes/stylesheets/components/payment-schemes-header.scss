@@ -1,0 +1,13 @@
+.payment-schemes-table-header {
+  --content-column-space: 0;
+  --padding-block: 32px;
+
+  gap: 16px;
+
+  padding-block: var(--padding-block);
+
+  @media only screen and (min-width: 768px) {
+    --content-column-space: 2;
+    --padding-block: 96px;
+  }
+}

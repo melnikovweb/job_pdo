@@ -1,0 +1,45 @@
+.chips {
+  --tag-background: transparent;
+  --tag-border-color: var(--additional-dark);
+  --tag-color: var(--additional-dark);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 65px;
+  padding-inline: 8px;
+  padding-block: 4px;
+
+  border: none;
+  border-radius: 100vmax;
+
+  color: var(--tag-color);
+  background-color: var(--tag-background);
+  box-shadow: inset 0 0 0 2px var(--tag-border-color);
+
+  font: var(--title-t4);
+
+  cursor: pointer;
+  user-select: none;
+
+  transition: all 300ms;
+
+  &:hover,
+  &.like-hover {
+    --tag-background: var(--general-lime);
+    --tag-color: var(--additional-dark);
+    --tag-border-color: var(--tag-background);
+  }
+
+  &.active {
+    --tag-background: var(--additional-dark);
+    --tag-color: var(--typography-white);
+    --tag-border-color: var(--tag-background);
+  }
+
+  @media only screen and (min-width: 1024px) {
+    padding-inline: 16px;
+    padding-block: 8px;
+  }
+}

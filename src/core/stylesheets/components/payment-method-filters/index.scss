@@ -1,0 +1,40 @@
+@use 'overrides';
+
+/* TODO Rework and migrate to sass to a global component and change names */
+.payment-methods-filters {
+  --filters-icon-size: 24px;
+  --filters-template-headers: var(--filters-icon-size) 1fr;
+  --filters-template-columns: var(--custom-template-columns, 1fr);
+  --filters-headers-gap: 16px;
+
+  &__control {
+    @include overrides.choices;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    padding-block: 16px;
+
+    border-bottom: 1px solid var(--scale-white-40);
+
+    font: var(--body-b1);
+  }
+
+  @media only screen and (min-width: 1024px) {
+    --filters-template-columns: var(--custom-template-columns, 2fr repeat(2, 1fr));
+
+    &__control:first-child {
+      grid-column: span 2;
+    }
+
+    &__dropdown-button {
+      display: none;
+    }
+
+    &__dropdown,
+    &__dropdown-wrapper {
+      display: contents;
+    }
+  }
+}

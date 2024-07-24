@@ -1,0 +1,97 @@
+@layer shared.parts.post-recommendations {
+  .post-recommendations {
+    --post-recommendations-controls-size: 40px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    padding-block: 32px;
+
+    overflow: hidden;
+
+    &__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      width: 100%;
+    }
+
+    &__content {
+      width: 100%;
+    }
+
+    &__content .swiper-slide {
+      width: clamp(481px, 10vw + 1rem, 683px);
+    }
+
+    &__title {
+      color: var(--additional-dark);
+
+      font: var(--headline-h1);
+    }
+
+    &__title:where([data-theme='black'] *),
+    &__title:where([data-theme='dark'] *) {
+      color: var(--typography-white);
+    }
+
+    &__actions {
+      display: flex;
+      gap: 16px;
+    }
+
+    &__button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      aspect-ratio: 1;
+      width: 1em;
+
+      border: none;
+      border-radius: 4px;
+
+      background: transparent;
+
+      font-size: var(--post-recommendations-controls-size);
+
+      transition: all 300ms;
+    }
+
+    &__button::before {
+      font-size: max(18px, 0.4em);
+    }
+
+    &__button:active {
+      color: var(--typography-white);
+      background: var(--general-blue);
+
+      transition: none;
+    }
+
+    &__button[class*='disabled'] {
+      pointer-events: none;
+    }
+
+    @media (hover) {
+      &__button:hover {
+        color: var(--typography-white);
+        background: var(--general-blue);
+      }
+    }
+
+    @media only screen and (min-width: 768px) {
+      --post-recommendations-controls-size: 56px;
+
+      padding-block: 48px;
+    }
+
+    @media only screen and (min-width: 1024px) {
+      gap: 56px;
+
+      padding-block: 96px;
+    }
+  }
+}

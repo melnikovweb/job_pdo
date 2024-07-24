@@ -1,0 +1,49 @@
+.ba-countries-block {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+
+  &__currency {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    padding: 4px 8px;
+
+    border-radius: 100vmax;
+
+    overflow: hidden;
+
+    background-color: var(--general-lime);
+
+    font: var(--title-t5);
+  }
+
+  &__currency img {
+    display: block;
+
+    width: 14px;
+    height: 14px;
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+  }
+
+  &__more {
+    padding-left: 12px;
+    padding-inline: 8px;
+    padding-block: 4px;
+
+    border: 1px solid var(--typography-white);
+    border-radius: 100vmax;
+
+    color: var(--typography-white);
+    background-color: transparent;
+
+    font: var(--title-t5);
+  }
+}

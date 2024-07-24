@@ -1,0 +1,48 @@
+@layer shared.parts.callback-section {
+  .callback-section {
+    --callback-section-title-color: var(--title-color, var(--typography-white));
+
+    display: grid;
+    gap: 32px;
+
+    padding-block: 32px;
+    justify-items: center;
+
+    &__title {
+      color: var(--callback-section-title-color);
+
+      font: var(--headline-h3);
+      text-align: center;
+    }
+
+    &__actions {
+      display: grid;
+      justify-content: center;
+      gap: 16px;
+      grid-template-columns: 1fr;
+
+      width: 100%;
+
+      overflow: hidden;
+      justify-items: center;
+    }
+
+    &__button {
+      width: 100%;
+    }
+
+    @media only screen and (min-width: 768px) {
+      gap: 48px;
+
+      padding-block: 48px;
+    }
+
+    @media only screen and (min-width: 1024px) {
+      padding-block: 96px;
+
+      &__actions {
+        grid-template-columns: repeat(auto-fit, 315px);
+      }
+    }
+  }
+}

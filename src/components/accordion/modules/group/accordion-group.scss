@@ -1,0 +1,16 @@
+:host {
+  display: block;
+}
+
+.accordion-group {
+  display: grid;
+  gap: 16px;
+
+  @media only screen and (min-width: 768px) {
+    gap: 24px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    gap: 40px;
+  }
+}

@@ -1,0 +1,65 @@
+.mb-tabs {
+  --header-space: 0;
+  --header-space-column: calc(var(--header-space) + 1) / calc((var(--header-space) + 1) * -1);
+  --header-block-space: 32px;
+  --item-padding-block: 32px;
+  --item-gap: 24px;
+
+  &__header {
+    display: grid;
+    row-gap: 16px;
+
+    padding-block: var(--header-block-space);
+
+    text-align: center;
+  }
+
+  &__title {
+    grid-column: var(--header-space-column);
+
+    color: var(--typography-white);
+
+    font: var(--headline-h1);
+    text-wrap: pretty;
+  }
+
+  &__description {
+    grid-column: var(--header-space-column);
+
+    color: var(--typography-white);
+
+    font: var(--body-b1);
+    text-wrap: pretty;
+  }
+
+  &__item {
+    display: grid;
+    gap: var(--item-gap);
+
+    padding-block: var(--item-padding-block);
+  }
+
+  @media only screen and (min-width: 768px) {
+    --header-block-space: 48px;
+    --item-padding-block: 48px;
+    --item-gap: 48px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    --header-block-space: 56px;
+    --item-padding-block: 96px;
+    --item-gap: 96px;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    --header-space: 1;
+  }
+
+  @media only screen and (min-width: 1440px) {
+    --header-space: 2;
+  }
+
+  @media only screen and (min-width: 1920px) {
+    --header-space: 3;
+  }
+}

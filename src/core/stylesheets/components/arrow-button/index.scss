@@ -1,0 +1,7 @@
+@use 'themes';
+
+[data-arrow-button] {
+  @include themes.core;
+  @include themes.blue;
+  @include themes.lime;
+}

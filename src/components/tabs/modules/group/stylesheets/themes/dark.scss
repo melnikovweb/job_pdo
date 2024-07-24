@@ -1,0 +1,19 @@
+@use '../variables';
+
+@mixin dark {
+  &[#{variables.$THEME_BORDER}='dark'] {
+    --border-color: var(--additional-dark);
+  }
+
+  &[#{variables.$THEME_PRIMARY}='dark'] {
+    --primary-color: var(--typography-white);
+    --primary-background: var(--additional-dark);
+  }
+
+  &[#{variables.$THEME_SECONDARY}='dark'] {
+    --secondary-color: var(--typography-white);
+    --secondary-background: var(--additional-dark);
+    --dropdown-color: var(--typography-white);
+    --dropdown-background: var(--additional-dark);
+  }
+}

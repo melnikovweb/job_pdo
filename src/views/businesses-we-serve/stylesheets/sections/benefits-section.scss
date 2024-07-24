@@ -1,0 +1,59 @@
+.bw-numbers-benefits {
+  --text-color: var(--scale-white-80);
+  --number-color: var(--typography-white);
+
+  padding-bottom: 32px;
+
+  &__items {
+    display: grid;
+    grid-gap: 16px;
+    grid-template-columns: 1fr;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    color: var(--typography-white);
+
+    text-align: center;
+  }
+
+  &__item-number {
+    color: var(--number-color);
+
+    font: var(--headline-h3);
+  }
+
+  &__item-text {
+    color: var(--text-color);
+
+    font: var(--body-b1);
+    text-align: center;
+  }
+
+  @media only screen and (min-width: 768px) {
+    padding-bottom: 48px;
+
+    &__items {
+      grid-gap: 16px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__item {
+      gap: 8px;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    padding-bottom: 96px;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    &__items {
+      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    }
+  }
+}

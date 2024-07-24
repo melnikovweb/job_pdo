@@ -1,0 +1,81 @@
+@use 'src/shared/stylesheets/mixins/scroll';
+
+.pj-countries {
+  --items-template-columns: 1fr;
+  --items-row-gap: 8px;
+  --item-gap: 8px;
+  --caption-gap: 8px;
+  --content-gap: 24px;
+
+  &__content {
+    display: grid;
+    row-gap: var(--content-gap);
+  }
+
+  &__list {
+    display: grid;
+    gap: var(--items-row-gap) var(--container-gutter);
+    grid-template-columns: var(--items-template-columns);
+  }
+
+  &__caption {
+    display: grid;
+    row-gap: var(--caption-gap);
+
+    color: var(--scale-white-80);
+
+    font: var(--body-b2);
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: var(--item-gap);
+
+    padding-block: 5px;
+  }
+
+  &__flag {
+    width: 32px;
+    height: 32px;
+
+    border-radius: 100%;
+    object-fit: cover;
+  }
+
+  &__name {
+    color: var(--typography-white);
+
+    font: var(--body-b1);
+  }
+
+  // TODO: Mobile first priority
+
+  @media only screen and (max-width: 1279px) {
+    &__list {
+      @include scroll.set-theme;
+
+      max-height: 789px;
+
+      overflow: hidden auto;
+    }
+  }
+
+  // TODO: Mobile first priority
+
+  @media only screen and (max-width: 767px) {
+    &__list {
+      max-height: 575px;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    --items-template-columns: repeat(2, 1fr);
+    --item-gap: 16px;
+    --caption-gap: 24px;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    --items-template-columns: repeat(3, 1fr);
+  }
+}

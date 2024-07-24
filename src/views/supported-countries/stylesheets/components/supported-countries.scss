@@ -1,0 +1,102 @@
+.sc-supported-countries {
+  --items-template-columns: 1fr;
+  --items-row-gap: 8px;
+  --item-gap: 8px;
+
+  display: grid;
+  gap: 32px;
+
+  padding-block: 32px;
+
+  &__header {
+    display: grid;
+    gap: 24px;
+  }
+
+  &__title {
+    color: var(--general-blue);
+
+    font: var(--headline-h2);
+  }
+
+  &__description {
+    color: var(--typography-default);
+
+    font: var(--body-b1);
+  }
+
+  &__list {
+    display: grid;
+    gap: var(--container-gutter) var(--items-row-gap);
+    grid-template-columns: var(--items-template-columns);
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: var(--item-gap);
+
+    padding-block: 5px;
+  }
+
+  &__flag {
+    width: 32px;
+    height: 32px;
+
+    border-radius: 100%;
+    object-fit: cover;
+  }
+
+  &__name {
+    color: var(--typography-default);
+
+    font: var(--body-b1);
+  }
+
+  // TODO: Check design
+
+  @media only screen and (max-width: 1279px) {
+    &__list {
+      max-height: 789px;
+
+      overflow: clip auto;
+
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: var(--additional-blue-15);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--general-blue);
+      }
+    }
+  }
+
+  @media only screen and (max-width: 767px) {
+    &__list {
+      max-height: 575px;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    --items-template-columns: repeat(2, 1fr);
+    --item-gap: 16px;
+
+    gap: 48px;
+
+    padding-block: 48px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    gap: 80px;
+
+    padding-block: 80px 56px;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    --items-template-columns: repeat(3, 1fr);
+  }
+}

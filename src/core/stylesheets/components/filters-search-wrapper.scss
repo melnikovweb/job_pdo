@@ -1,0 +1,38 @@
+@use 'src/shared/stylesheets/mixins/state';
+
+.filters-search-wrapper {
+  @include state.css(filters-icon-size, 24px);
+  @include state.css(filters-template-headers, var(--_filters-icon-size) 1fr);
+  @include state.css(filters-headers-gap, 16px);
+  @include state.css(filters-placeholder, currentColor);
+
+  display: grid;
+  gap: var(--_filters-headers-gap);
+  grid-template-columns: var(--_filters-template-headers);
+
+  width: 100%;
+
+  &::before {
+    font-size: var(--_filters-icon-size);
+  }
+
+  input {
+    width: 100%;
+    padding: 0;
+
+    border: none;
+
+    color: currentcolor;
+    background: transparent;
+    background-color: transparent;
+
+    font: var(--body-b1);
+
+    &::placeholder {
+      color: var(--_filters-placeholder);
+      opacity: 1;
+
+      transition: all 300ms;
+    }
+  }
+}

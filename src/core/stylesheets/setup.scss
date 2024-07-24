@@ -1,0 +1,87 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: auto;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  &[data-scroll='none'] {
+    overflow: hidden;
+  }
+}
+
+a {
+  color: var(--typography-white);
+
+  text-decoration: none;
+}
+
+table {
+  width: 100%;
+}
+
+input[type='hidden'] {
+  position: absolute;
+
+  visibility: hidden;
+
+  opacity: 0;
+
+  pointer-events: none;
+  user-select: none;
+  appearance: none;
+}
+
+textarea {
+  &::-webkit-scrollbar {
+    width: 1px;
+    height: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 8px;
+
+    background: var(--typography-secondary);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+
+    background-color: var(--general-lime);
+  }
+}
+
+input:where([type='text'], [type='search'], [type='email'], [type='tel'], [type='url']),
+textarea {
+  width: 100%;
+
+  border: none;
+
+  background-color: transparent;
+
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: var(--scale-white-80);
+  }
+}
+
+[hidden] {
+  display: none !important; /* stylelint-disable-line declaration-no-important */
+}

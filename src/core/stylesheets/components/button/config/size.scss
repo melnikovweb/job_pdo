@@ -1,0 +1,11 @@
+@use 'src/shared/stylesheets/mixins/state';
+
+@mixin size {
+  &[data-size~='sm'] {
+    @include state.css(button-height, 48px);
+  }
+
+  @media only screen and (min-width: 768px) {
+    @include state.css(button-height, 64px);
+  }
+}
